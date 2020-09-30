@@ -41,7 +41,9 @@ def _build_impl(frame_sequence: pims.FramesSequence,
                               qualityLevel=0.1,
                               blockSize=blockSize,
                               useHarrisDetector=False)
-        id_cnt = 0 if frame_corners is None else frame_corners.ids.ravel()[-1].astype(int)
+
+        id_cnt = 0 if frame_corners is None \
+            else (frame_corners.ids.ravel()[-1] + 1).astype(int)
         images = [image]
         for _ in range(maxLevel):
             images.append(cv2.pyrDown(images[-1]))
