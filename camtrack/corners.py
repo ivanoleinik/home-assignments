@@ -38,8 +38,9 @@ def _build_impl(frame_sequence: pims.FramesSequence,
                 builder: _CornerStorageBuilder) -> None:
     def find_new_corners(image, maxLevel=2, blockSize=5, frame_corners=None):
         feature_params = dict(maxCorners=0,
-                              qualityLevel=0.1,
+                              qualityLevel=0.05,
                               blockSize=blockSize,
+                              minDistance=(2 * blockSize),
                               useHarrisDetector=False)
 
         id_cnt = 0 if frame_corners is None \
@@ -60,10 +61,9 @@ def _build_impl(frame_sequence: pims.FramesSequence,
                 for x, y in good_corners:
                     rx = np.round(x / scale).astype(int)
                     ry = np.round(y / scale).astype(int)
-                    cv2.circle(mask, (rx, ry), size, thickness=-1, color=0)
+                    cv2.circle(mask, (rx, ry), blockSize, thickness=-1, color=0)
 
             corner_group = cv2.goodFeaturesToTrack(image,
-                                                   minDistance=size,
                                                    mask=mask,
                                                    **feature_params)
             if corner_group is not None:
