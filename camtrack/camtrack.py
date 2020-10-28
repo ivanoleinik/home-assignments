@@ -6,19 +6,23 @@ __all__ = [
 
 from typing import List, Optional, Tuple
 
-import numpy as np
-
-from corners import CornerStorage
-from data3d import CameraParameters, PointCloud, Pose
+import cv2
 import frameseq
+import numpy as np
 from _camtrack import (
     PointCloudBuilder,
     create_cli,
     calc_point_cloud_colors,
     pose_to_view_mat3x4,
     to_opencv_camera_mat3x3,
-    view_mat3x4_to_pose
+    view_mat3x4_to_pose,
+    build_correspondences,
+    rodrigues_and_translation_to_view_mat3x4,
+    triangulate_correspondences,
+    TriangulationParameters,
 )
+from corners import CornerStorage
+from data3d import CameraParameters, PointCloud, Pose
 
 
 def track_and_calc_colors(camera_parameters: CameraParameters,
@@ -36,12 +40,55 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
         rgb_sequence[0].shape[0]
     )
 
-    # TODO: implement
-    frame_count = len(corner_storage)
-    view_mats = [pose_to_view_mat3x4(known_view_1[1])] * frame_count
-    corners_0 = corner_storage[0]
-    point_cloud_builder = PointCloudBuilder(corners_0.ids[:1],
-                                            np.zeros((1, 3)))
+    triangulation_parameters = TriangulationParameters(max_reprojection_error=1.0,
+                                                       min_triangulation_angle_deg=1.15,
+                                                       min_depth=0.1)
+    correspondences = build_correspondences(corner_storage[known_view_1[0]],
+                                            corner_storage[known_view_2[0]])
+    points, ids, _ = triangulate_correspondences(correspondences,
+                                                 pose_to_view_mat3x4(known_view_1[1]),
+                                                 pose_to_view_mat3x4(known_view_2[1]),
+                                                 intrinsic_mat,
+                                                 triangulation_parameters)
+    point_cloud_builder = PointCloudBuilder(ids, points)
+    seq_size = len(rgb_sequence)
+    view_mats = [None] * seq_size
+    changed = True
+
+    while changed:
+        changed = False
+        for frame in range(seq_size):
+            corners = corner_storage[frame]
+            if view_mats[frame] is None:
+                intersection = [corner in corners.ids
+                                for idx, corner in enumerate(point_cloud_builder.ids)]
+                points = np.array([p for idx, p
+                                   in zip(corners.ids, corners.points)
+                                   if idx in point_cloud_builder.ids])
+                if points.shape[0] > 5:
+                    retval, rvec, tvec, inliers = cv2.solvePnPRansac(point_cloud_builder.points[intersection],
+                                                                     points,
+                                                                     intrinsic_mat,
+                                                                     None)
+                    if retval:
+                        print(f'Frame {frame} is processing, {len(inliers)} inliers were found')
+                        view_mats[frame] = rodrigues_and_translation_to_view_mat3x4(rvec, tvec)
+                        changed = True
+            if view_mats[frame] is not None:
+                for i in range(frame):
+                    correspondences = build_correspondences(corner_storage[i],
+                                                            corners,
+                                                            point_cloud_builder.ids)
+                    if view_mats[i] is not None and len(correspondences.ids) > 0:
+                        new_points, new_ids, _ = triangulate_correspondences(correspondences,
+                                                                             view_mats[i],
+                                                                             view_mats[frame],
+                                                                             intrinsic_mat,
+                                                                             triangulation_parameters)
+                        if len(new_points) > 0:
+                            print(f'Frame {frame}... frame {i}: {len(new_points)} points were triangulated')
+                        point_cloud_builder.add_points(new_ids, new_points)
+                print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
 
     calc_point_cloud_colors(
         point_cloud_builder,
