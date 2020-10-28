@@ -1,0 +1,2088 @@
+frames:
+- frame: 1
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - &id001 !!python/name:numpy.ndarray
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - &id002 !!python/object/apply:numpy.dtype
+        args:
+        - f8
+        - false
+        - true
+        state: !!python/tuple
+        - 3
+        - <
+        - null
+        - null
+        - null
+        - -1
+        - -1
+        - 0
+      - false
+      - !!binary |
+        KMne5iVt5j+9th/WdV3aP6PtJS2rouK/Dcn0mn3S5r/gz4JsnO7aPwHEqpNp8OG/n0HahK/sjD97
+        vJcU49zpPznXcAXL1uI/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Vyi34/D50z9Dk92HkibTP+NOkz3lhtq/
+- frame: 2
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        WGT2WSpj5j+38wK52mDaP07ml2V1reK/QcGPOf/b5r82FBqLAPraP43RRBYA4OG/MFcdkwkskD8D
+        DfWADdnpP3gYT5C02+I/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        5HOGSk8D1D9JszOcIRjTPzEPzOb0jdq/
+- frame: 3
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        VP3hpM0G5j+NQUNWib/aP/qby0AD+eK/+3jgLtYw57+dx8R4oaHbP2ylactKL+G/oPXpNzQloD/i
+        /uWRGZTpP19/m/e9M+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        935JTvtC1D8AxcdzEG3SP+VdlabS8dq/
+- frame: 4
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        rHui0KUp5j8BOYMdqZPaPytNVbHI3+K/HNJx9G8R57+XRdc0/V3bP3lheXUTdOG/sEoudnxWmj8u
+        koK0pbHpPwUfCqVsDuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        TjrY1CUn1D8NhmpYFLjSP6O9ZlR8yNq/
+- frame: 5
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        8iOPJhcl5j95pm68747aP0htel3K5uK/tRwKkJ0V57/x/jiOh1vbP5rOnXKDb+G/j0uqwO0Emz8h
+        olTlhbPpPxiQbdmnC+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        LzW8IOwm1D+WpA8k0bvSPysBheX1xtq/
+- frame: 6
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        WuSRa/035j9yktW7rI7aP9WU6AGn0OK/+bq3+E8E578Lwy4snUzbP8LSZkkkjOG/kMUisOzPlz+/
+        IWnrjbfpP2CAoCRIB+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        b0S7W3MG1D+omQQJQ97SP+pYlx+7vtq/
+- frame: 7
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        RgKC6rA95j8+BCD5YYraPz0jx39ty+K/mYkhsQj/5r8ghSyjRUXbP3EC89/nleG/wM+9krPnlj/I
+        VaTYm7rpP8B8o/9tA+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        4GIbDc/30z+bK1dn+vLSP6EkrrJWutq/
+- frame: 8
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        jnj6CaJF5j8qaQnyWpHaP1oMQaeLv+K/7ZLjDKP35r+13mONGkjbP8D57Wh3nuG/jxNviDOxlT/G
+        FYUJD7jpP2eVvd07B+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        hNAhHMXi0z9HwSIuRQfTPyCe0mEMutq/
+- frame: 9
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        yobt2hk+5j9Wkxu36JfaP4P7vuQoxuK/0pMUZGv+5r/llq64N2LbP7NAK7pzi+G/L8yIZqbDlz/p
+        IFzwa6/pPxILmN9EEuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        6PpLtPza0z/62Alm7wLTPzGI04CgwNq/
+- frame: 10
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        oDbldHs/5j8b6Npk+JvaP2R2QWAVw+K/oIg0+Cb95r/deQQPV2TbP9GoPc1IjOG/kHHVlL1+lz8o
+        oB7cza3pP3VCI7KHFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Iu54AELH0z/YqjzcQhXTP0iQ/oUHvdq/
+- frame: 11
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        FmjxEtY/5j/4e6f2q6TaP3sULUaTv+K/Tb1YXur85r+rm5Lo0GXbP6RNT7gEjOG/8XQSgrkTlz/r
+        ZPeCJ6vpP+grZsE4GOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        f9q8Pyi00z9Psktx2yfTPwKwNgfCuNq/
+- frame: 12
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        QDJTWkNI5j8+rXXHqpvaPxvBaHPCuOK/2COHPfH05r+xSXspeGLbPwHlm2K/l+G/j1qncPxJlj/y
+        BUqnYa7pP/VymWIdFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        +AZybfqb0z/Mtq/ZsEjTP7EwPlqKrNq/
+- frame: 13
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        3MdtcJk/5j/pPUgVUKDaPxGyX3VnweK/aboLTCr95r+ZnPiQvF/bP7TKtxkQjuG/P0Cgcsr+lj+Q
+        MF/z563pP684Jo2LFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        4iyQNv6P0z+0jhW0iVzTP20sa/FFn9q/
+- frame: 14
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        rEuIt6pN5j/90fOb6JPaP59tIygUteK/8JK39hTw5r/FWdbTp0nbP7il5sCyp+G/XzRaT8SflD/+
+        8BPP/LbpP2YlNWv6COM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        z3XYfaJu0z9vb9plI5PTP4Z+zPI8gtq/
+- frame: 15
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        hgbnTrZQ5j/yNgF8F6naP0F4SgjmqeK/5+Oroxzt5r+GQ+DKNWXbP3bGNvzhoOG/EANk5jeolD+s
+        dVgqK6rpP04OUjY9GuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        af1HAotT0z+wnWMFPazTP9D9Sjb/f9q/
+- frame: 16
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        WqueDwxN5j+k5tJGg6DaP+VlX9JVseK/j74Wb6fw5r8EtNyijFbbP4Tfoef2oeG/4QNRJUbClD89
+        RlzxTLDpP+O6xlX2EeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        x9Z7ljFM0z8+PQEhaM7TP/qHBo7sX9q/
+- frame: 17
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        bAwqcPtE5j//Z2o2T6TaP7oNyzKXueK/KccJlkD45r9gQKyInVnbP7mR59feluG/oEKh4CHClT+7
+        aLQUgK7pPx/fLKIbFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Q3Sr0HdF0z/OUA4spefTP/Ac2WfrQdq/
+- frame: 18
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        gi7QCr5C5j9YTXcQsqfaPzVGK4cMu+K/z0/LK2z65r+NVl1vulfbP+oWPdLElOG/UnRrn6HClT/I
+        gHfPH67pP+w3DhKdFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        7qM67Jo70z+bvGLIxgfUPzmnYAX/Htq/
+- frame: 19
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        +O/1fytH5j9HPsfjRazaP3QLoZ8mtOK/KRP7ZFL25r/s3fbjW1fbPwfz5UdEmuG/3vkXnk/vlD/m
+        de/FCK3pP4NKaZ9PFuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        jsHg3d8w0z8AnHjUwjLUPxlKvxsn+9m/
+- frame: 20
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        zL0bOYRB5j9lC/qTHLzaP2la3FY6teK/ZsilQMT75r+AoIckFVzbP+Ghdi5RkeG/QDN+o3MWlT80
+        ZsLsp6fpPxRiaN5+HeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        TLLYQ1ox0z/wNVGa5U3UP2GvQOTj09m/
+- frame: 21
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        JFcq75E/5j/4RAGRDrLaP5fsagchu+K/Wv52qa395r+cPhQWDkzbP+IHWRUMleG/UI3lYJr3lD+p
+        GFfGia7pP7KIM0dHFOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        3MwriPI60z9RAsJFzG7UP7fdxAR0ldm/
+- frame: 22
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Pux3Hpk55j99BRY5CcnaP6St4WoEuuK/f+bBUGQD579wfHGBp1jbP3KhESqpiOG/IMZgZkY6lT+Z
+        PybyMqXpPwr8gK/AIOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        WO7S7PtI0z9s29RzrH/UP07Ip6lBbtm/
+- frame: 23
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        ZLXnYM8/5j8zi/ElNMLaP19bWYYUteK/oSnhGrT95r++zbgjBUfbP0ONk6j3luG/IRPyd0/Okz/O
+        eT2KrKvpP0pU+QBxGOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        mPalFkZa0z90gL6ZKZ7UPwDcoadrKdm/
+- frame: 24
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        eGXx4Tw55j9a6ZEtcdvaP4m8irDZs+K/FtlWQfwD57/uzxk3mFXbP1AFZhITieG/8LA182silD8c
+        aUFlM6HpP/UxaGBnJuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        9cmvkLyB0z/bsYYmNZ7UP9DglY4m/di/
+- frame: 25
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        YNEgLAA75j8f1/xCZ9zaP21xAthoseK/95yUwk0C57+2WksazFjbP7S4p2kIiuG/UP+5g7IJlD/Y
+        ybM+GKDpPzPhMLroJ+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        EHD0yJ2l0z+HlSOh25/UPyU+k6JQw9i/
+- frame: 26
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        nkl+xZNB5j9WHksZy+HaP4NKcwujp+K/qC3i8Dr85r9cVMO6ilTbP3zp0PCkk+G/ILfMuOyrkj+b
+        3W4P0Z/pP4XU0EmgKOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        pz+QJUDF0z+cTRacEqXUP/JiMckJiti/
+- frame: 27
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        9AfPsg1E5j9opTyY4xHbP/9JDktAk+K/wPPEXDT65r+bX9bPHmXbP0RN/tDWj+G/gaVDKSW8kD/f
+        SMLbtY7pP4QZaCjeP+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        7czV7KHg0z+HCc2atJXUPwCZ3e/Ja9i/
+- frame: 28
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        VBenkZY35j+parzGFfbaPx5gtYI4rOK/ca27JtUF57/xEp0+b1XbP0LD8xi2huG/AMS3Tunukj9J
+        8RYZP5rpP69YAtAAMOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Sl6hENAj1D+9nLRkHXnUPyKxfSiRK9i/
+- frame: 29
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        rFjCgQQ25j/rdbzBnB/bPw9qPiYJn+K/XakhpbQH57+CtAKqVljbP+EAqtYdg+G/QExhSJgakT/E
+        FH65fo7pP2dzMJoSQOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        SMXChrZK1D/jEBwJFFvUP+1Gh4c1F9i/
+- frame: 30
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        WLc1qClD5j+hQtot5S/bP2Get05aieK/xq1+RU775r9RMB+YNGfbP//NK5qVjeG/gzWXBxy+jj+T
+        uGruLobpP7Yy9dNzS+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        ZZSld/lm1D/wFEdvskHUP4XlCTs2Bdi/
+- frame: 31
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        fnxwGiA25j/OrpMyfBPbP8cYHEVRo+K/Knk3sqQH579Sc1NDKknbP0w7goEcieG/ANTiwMPgkD/K
+        Nv6gwpXpPwHUvmN2NuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        8mPJkyOt1D8cXYblFxDUP5GIR+MB2Ne/
+- frame: 32
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        gAsL7Zs35j+asAm9MBrbP10hxV0cn+K/YUAd/wEG578nIiEoDmbbP9L2TvL8f+G/cGi6UjT1kT9W
+        Ag+JQozpP/OEjSPYQuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        JquJaGXX1D8SsYjV9dDTP8dmAVMG29e/
+- frame: 33
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        bN7XL7U/5j++hSCOmhbbP4iGViG9luK/AgqrInj+5r8oxaSQ+FnbP4BakQaajuG/7rRnq6ZrkD97
+        0CRacpDpPyfDmSChPeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        sH2w6R751D9vuoG7xKfTP0GswNge5de/
+- frame: 34
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        7vprCzJP5j8803BJp/zaP2G6V5eajeK/lNquNrjv5r9wJsiML0jbP4+Aw5m8qOG/IRb/OsiZjT/0
+        LdqJDJzpP2MPv3eBLuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        f4S3/NQh1T+m+UoFhY3TP6eeF2bC6de/
+- frame: 35
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        EOnzL6xT5j+54Au7ChPbP/t0/FMLgOK/bsW6ZXvr5r/5spsVNFrbPzsIaTxFp+G/okLwd4QRjD+k
+        Ro/mU5HpPwKWOEnuPOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        9fZuthcz1T845DLS51DTP5BaAnLRBdi/
+- frame: 36
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        SHWJj39S5j+FumQkOQ/bP6ZNiXTbguK/+JMOqIbs5r+6e1OVNV/bP++KwFb5o+G/4iZ017xXjT8S
+        B0HE/5DpPyV3dKw/PeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        VbLTrZJQ1T8zNSebWBXTPyLgBjZAINi/
+- frame: 37
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        LCHcOlNZ5j+/X2KNwuHaP6eSfjAsi+K/OgSOK73l5r/woAMU91HbP7oSBGLmseG/4KyIzGPxjj/X
+        fekmg6DpP/1Vn5NoKOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        RClRdbRv1T+YclkaiOnSPy5gjIsVM9i/
+- frame: 38
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        xKMVmglt5j8m2kAJCN3aP0haIiIJdeK/puH0TqTS5r810ybBQGTbP6FcHih4w+G/AtxtzNdhjD8V
+        +yDa3pzpP2BTzxmGLeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        nmLwYCJp1T99k+5tv83SPxIf1wr5aNi/
+- frame: 39
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        +OcNHEle5j9rtOVXAdvaP8pePhqjh+K/t0KitKDg5r+2dhxv0nHbP/eyiNcurOG/cewALxT4kD8N
+        U5sExZnpP93DWkcZMeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        8+QK/Xp71T/gQu5r1IbSP7Ouoe2Jmti/
+- frame: 40
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        7EyD3Npg5j8351aE7eTaPxVWiqrugOK/YB0kRQfe5r9iPBX9cYnbP5z3eUZbpuG/wCReKk1tkT8T
+        jGJK0ZDpP4oNgVDqPOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        HIgQQHFz1T+UdHWi4ljSP03jR7Yp39i/
+- frame: 41
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        htuwfFFr5j8QjFDspq7aPww54MHnh+K/UKclgALU5r96apgkcFbbPwgl+tgHx+G/gMIiScYfkD8D
+        WN1TqazpP2k5x9P6F+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Mqe0UmFv1T/T5kOBc1fSPzfZq9nS9ti/
+- frame: 42
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        KM3mzY9t5j/kmvlyu4XaP736pX/ck+K/CJrWmWDR5r/hPzFfOV3bP0Ckis7Mx+G/8QWPisFjkj8j
+        JqurcrXpP/2cxyqhC+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        hYA7bXZw1T9YpAY+RkbSP4R1GGbVJ9m/
+- frame: 43
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        fnMkY5h35j8aoFDpyJTaP/B0BbBTguK/cpNggo3H5r9+X6MKBH7bP3rc+VPAx+G/MfFqyiUekj+2
+        TfiTzajpP+FE5p+3HOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        +Ag1Ln5D1T9vMOhWmDvSP3ff5LSMbtm/
+- frame: 44
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        fj+k++1s5j/G+NkPwKHaP54q/T+YiuK/2WY9ZOHR5r9hNGe/9IDbP/OfsDdZueG/sUfu+pP3kj+x
+        H3Yqp6TpP65UgQsUIuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        6IMG3Igp1T9rzfKEUyXSP+ep/gzwp9m/
+- frame: 45
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        evCPxGBV5j+TrqOSo4baP/hzp+OVsOK/LvODlf/n5r/8GtjXGnrbP1fpa2Fmn+G/wPERCGoKlz+r
+        7GMigq3pP5dinhARFeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        xeZa/08v1T8Q4yPzMgrSP8B2xZuSy9m/
+- frame: 46
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        hMKZGzFa5j+miX0pHnraPwBeV+tEr+K/nvHFs2Lj5r90D+pXPHPbP5EuirMPqOG/QbFcANKzlj9n
+        NpfkkrLpP3nKwDFYDuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        zn/bp1cL1T8uq1yaXhfSP8CmaDyO7Nm/
+- frame: 47
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        DEgyTnJm5j+LZG0mvnPaP5YFh6TVouK/5ua/QbjX5r/La3RW63DbP8CrLmkKuOG/kWB0fYFYlT/K
+        F45P1bTpPwZtYjewC+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        iLglJa3m1D8XyJu+DjDSP1A13dTnE9q/
+- frame: 48
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        rFRwAJtk5j/Kw2w0QmLaP4AlKmY8q+K/70yP7ULZ5r/LRRl63W/bPzRyXvN1tuG/jwXKE65xlj+w
+        IYnXmrnpP9Vd5uDsBOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        f+UTtLLT1D9Agy9XHjbSP6Jw1obgLtq/
+- frame: 49
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        wJWmxddq5j9KjvKwCFzaPwElXA/ypeK/WSh/zEHT5r/PyT5fvm/bP7hGmBk+vuG/wG99Ron4lT+v
+        kvp5O7vpP5mMV4fcAuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        nYuCm9Sv1D/i4mlv2E7SP0FeQ5FKSdq/
+- frame: 50
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        kBQ0Qq5h5j8wdRmal2faP011uZnbrOK/yGnxMwHc5r8WnFQ2DHfbP4/9aUoisOG/4n+mO0rvlj+R
+        jpTgUbbpP3q8aB44CeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        E2y9PjCX1D8Q9qAquk7SP8zMyhcuYtq/
+- frame: 51
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        CkAusZ5s5j8hGBzq9W3aPx7pc0p1neK/DIsNTojR5r+KK8ncTYPbP/+ChqviuOG/Mol9muvhlT9u
+        8sYJaLHpP71RDXkoEOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        0Bt90yt11D8dqL13SWnSPxXW5Y+pgtq/
+- frame: 52
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        1gQ0mYdm5j+7/0NESFTaP0Gc7BPcreK/oJ/q2mnX5r8gS46VLGTbP2aGw8hcveG/cRImBWhJlj/0
+        DjDES8DpP3Hu6Yno++I/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        1TQUnolq1D87pxMWb33SP4stsKiee9q/
+- frame: 53
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        bhnRCtxr5j+pLLFWomnaP5Aq/pnon+K/n5310kvS5r9wvblVLnzbP6rSxDKquuG/kSGnZCLQlT8P
+        MzSHbLTpP206x78bDOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        fsu1s69I1D9WzY+OTY/SP3WM0xSvmNq/
+- frame: 54
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        KBpb2Jpk5j/c6otg61raP76+J9zTreK/NIOMlz/Z5r9UVMtD5mnbP93yBEPJuOG/8NQuLt9/lj9V
+        ytYeE73pPy7bwVE2AOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        1lv6z8s+1D9+0cHjb5zSP9D4B5siktq/
+- frame: 55
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        prhtlURn5j+JMFfW313aP/i5dAKXqeK/NsPyw7bW5r9WHpHpKW3bP45ys0HKuuG/QbkBBaUvlj9N
+        u0nScrvpP+q5lJ2BAuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        9McgxRgq1D8ShKFYLq/SP14ot0Sentq/
+- frame: 56
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        5lwVgghg5j/SVmuprGvaP9FSQHZjreK/M5VINqvd5r/4Qg8hbHPbP1sLXdBjr+G/AJPDpHK6lj8Z
+        sd1EPbbpP/sIWMxjCeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        Farknc8d1D+681uvebHSP9CRyWybqNq/
+- frame: 57
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        ilBLE4Zj5j/uuvaZeGvaP6TE+pxGqeK/iGsVWG/a5r/Id4GxtW3bPx8MDAXIteG/jkhxohD6lT8v
+        3K/F0LfpP1Njhx57B+M/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        ys48W3sQ1D9K7XF2MsPSP88kj+e1qNq/
+- frame: 58
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        BH6cl+xq5j+iMJ01oWvaP6OIh69ToOK/RCisznbT5r/fNjUzqWjbP7j4/FC2wOG/YHzUXYO+lD+7
+        bvLMHrnpP62CYiIQBuM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        6+BCpOX+0z8ANR7G/dbSP2/L1pfDqNq/
+- frame: 59
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        zJCcYzVi5j9EmrLX63jaP5EPOlIWpuK/pcWOvdvb5r/AXjS8MW3bP7Aiy8EktOG/X9mqvRpolT/F
+        ibGPfrTpP48KUusgDOM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        qfQwM2X70z/cHzU579HSPw34LB0lrtq/
+- frame: 60
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        hoflGf9X5j+Ag60UB1baP3wnvCWfvuK/d3IzVZ7l5r/qiIVvjEXbP7+YlW3XtuG/UCmlrVNWlj9L
+        ClW4+MfpP5GQRO128eI/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        BQEYLR8P1D9lUTtQptvSP+5PbHSElNq/
+- frame: 61
+  pose:
+    R: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        NBQfSKdf5j/5hIExxGzaP08VEBJ1reK/kVFxnFje5r/LzKG2zlzbP9LKGtJEt+G/rio24nB2lT/K
+        8QiS+7vpP0a4Vab9AeM/
+    t: !!python/object/apply:numpy.core.multiarray._reconstruct
+      args:
+      - *id001
+      - !!python/tuple
+        - 0
+      - !!binary |
+        Yg==
+      state: !!python/tuple
+      - 1
+      - !!python/tuple
+        - 3
+      - *id002
+      - false
+      - !!binary |
+        U2TpOmz70z8RgtTGud7SP5TKOjrEpdq/

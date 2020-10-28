@@ -1,0 +1,5 @@
+Exception ignored in: <function PyAVReaderIndexed.__del__ at 0x7faf4be87af0>
+Traceback (most recent call last):
+  File "/Users/ivanoleinik/sp_3/3dcv/home-assignments/venv/lib/python3.8/site-packages/pims/pyav_reader.py", line 368, in __del__
+    self._container.close()
+AttributeError: 'NoneType' object has no attribute 'close'
