@@ -29,7 +29,7 @@ Frame 11... frame 2: 107 points were triangulated
 Frame 11... frame 3: 49 points were triangulated
 Frame 11... frame 4: 13 points were triangulated
 Frame 11... frame 5: 7 points were triangulated
-Frame 11... 39 points were retriangulated
+Frame 11... 40 points were retriangulated
 Frame 11... current point cloud size is 5361
 Frame 12 is processing, 1786 inliers were found
 Frame 12... frame 0: 1 points were triangulated
@@ -40,7 +40,7 @@ Frame 12... frame 4: 6 points were triangulated
 Frame 12... frame 5: 11 points were triangulated
 Frame 12... frame 6: 10 points were triangulated
 Frame 12... frame 7: 4 points were triangulated
-Frame 12... 39 points were retriangulated
+Frame 12... 40 points were retriangulated
 Frame 12... current point cloud size is 5481
 Frame 13 is processing, 1825 inliers were found
 Frame 13... frame 0: 1 points were triangulated
@@ -48,7 +48,7 @@ Frame 13... frame 5: 1 points were triangulated
 Frame 13... frame 6: 1 points were triangulated
 Frame 13... frame 7: 11 points were triangulated
 Frame 13... frame 8: 9 points were triangulated
-Frame 13... 28 points were retriangulated
+Frame 13... 29 points were retriangulated
 Frame 13... current point cloud size is 5550
 Frame 14 is processing, 1847 inliers were found
 Frame 14... frame 0: 1 points were triangulated
@@ -57,7 +57,7 @@ Frame 14... frame 7: 1 points were triangulated
 Frame 14... frame 8: 4 points were triangulated
 Frame 14... frame 9: 2 points were triangulated
 Frame 14... frame 10: 2 points were triangulated
-Frame 14... 14 points were retriangulated
+Frame 14... 10 points were retriangulated
 Frame 14... current point cloud size is 5583
 Frame 15 is processing, 1852 inliers were found
 Frame 15... frame 1: 1 points were triangulated
@@ -66,403 +66,395 @@ Frame 15... frame 3: 2 points were triangulated
 Frame 15... frame 4: 1 points were triangulated
 Frame 15... frame 5: 1 points were triangulated
 Frame 15... frame 9: 7 points were triangulated
-Frame 15... frame 10: 8 points were triangulated
-Frame 15... frame 11: 7 points were triangulated
-Frame 15... 45 points were retriangulated
-Frame 15... current point cloud size is 5667
-Frame 16 is processing, 1875 inliers were found
+Frame 15... frame 10: 9 points were triangulated
+Frame 15... frame 11: 8 points were triangulated
+Frame 15... 3 points were retriangulated
+Frame 15... current point cloud size is 5673
+Frame 16 is processing, 1879 inliers were found
 Frame 16... frame 6: 2 points were triangulated
 Frame 16... frame 7: 1 points were triangulated
 Frame 16... frame 8: 1 points were triangulated
-Frame 16... frame 9: 1 points were triangulated
 Frame 16... frame 10: 1 points were triangulated
-Frame 16... frame 11: 5 points were triangulated
-Frame 16... frame 12: 16 points were triangulated
-Frame 16... 1473 points were retriangulated
-Frame 16... current point cloud size is 5748
-Frame 17 is processing, 1903 inliers were found
+Frame 16... frame 11: 4 points were triangulated
+Frame 16... frame 12: 15 points were triangulated
+Frame 16... 1 points were retriangulated
+Frame 16... current point cloud size is 5745
+Frame 17 is processing, 1902 inliers were found
 Frame 17... frame 1: 1 points were triangulated
 Frame 17... frame 3: 2 points were triangulated
 Frame 17... frame 8: 2 points were triangulated
 Frame 17... frame 10: 1 points were triangulated
-Frame 17... frame 12: 4 points were triangulated
-Frame 17... frame 13: 14 points were triangulated
-Frame 17... 232 points were retriangulated
-Frame 17... current point cloud size is 5820
-Frame 18 is processing, 1923 inliers were found
-Frame 18... frame 4: 1 points were triangulated
+Frame 17... frame 12: 5 points were triangulated
+Frame 17... frame 13: 15 points were triangulated
+Frame 17... frame 14: 1 points were triangulated
+Frame 17... 1 points were retriangulated
+Frame 17... current point cloud size is 5826
+Frame 18 is processing, 1916 inliers were found
+Frame 18... frame 5: 1 points were triangulated
 Frame 18... frame 10: 1 points were triangulated
 Frame 18... frame 11: 1 points were triangulated
-Frame 18... frame 13: 2 points were triangulated
-Frame 18... frame 14: 12 points were triangulated
-Frame 18... frame 15: 10 points were triangulated
-Frame 18... 71 points were retriangulated
-Frame 18... current point cloud size is 5901
-Frame 19 is processing, 1947 inliers were found
+Frame 18... frame 13: 1 points were triangulated
+Frame 18... frame 14: 11 points were triangulated
+Frame 18... frame 15: 12 points were triangulated
+Frame 18... current point cloud size is 5907
+Frame 19 is processing, 1943 inliers were found
 Frame 19... frame 10: 2 points were triangulated
-Frame 19... frame 11: 3 points were triangulated
-Frame 19... frame 12: 1 points were triangulated
-Frame 19... frame 13: 4 points were triangulated
-Frame 19... frame 15: 18 points were triangulated
-Frame 19... frame 16: 14 points were triangulated
-Frame 19... 30 points were retriangulated
-Frame 19... current point cloud size is 6027
-Frame 20 is processing, 1983 inliers were found
+Frame 19... frame 11: 2 points were triangulated
+Frame 19... frame 12: 2 points were triangulated
+Frame 19... frame 13: 5 points were triangulated
+Frame 19... frame 15: 16 points were triangulated
+Frame 19... frame 16: 15 points were triangulated
+Frame 19... current point cloud size is 6033
+Frame 20 is processing, 1977 inliers were found
 Frame 20... frame 9: 3 points were triangulated
 Frame 20... frame 11: 3 points were triangulated
 Frame 20... frame 12: 1 points were triangulated
-Frame 20... frame 13: 2 points were triangulated
-Frame 20... frame 14: 4 points were triangulated
-Frame 20... frame 16: 7 points were triangulated
+Frame 20... frame 13: 1 points were triangulated
+Frame 20... frame 14: 5 points were triangulated
+Frame 20... frame 15: 1 points were triangulated
+Frame 20... frame 16: 6 points were triangulated
 Frame 20... frame 17: 26 points were triangulated
-Frame 20... 69 points were retriangulated
-Frame 20... current point cloud size is 6165
-Frame 21 is processing, 2023 inliers were found
+Frame 20... current point cloud size is 6171
+Frame 21 is processing, 2013 inliers were found
 Frame 21... frame 13: 1 points were triangulated
-Frame 21... frame 14: 1 points were triangulated
-Frame 21... frame 15: 5 points were triangulated
-Frame 21... frame 17: 5 points were triangulated
-Frame 21... frame 18: 45 points were triangulated
-Frame 21... 1457 points were retriangulated
+Frame 21... frame 15: 4 points were triangulated
+Frame 21... frame 17: 4 points were triangulated
+Frame 21... frame 18: 46 points were triangulated
+Frame 21... 44 points were retriangulated
 Frame 21... current point cloud size is 6336
-Frame 22 is processing, 2063 inliers were found
+Frame 22 is processing, 2040 inliers were found
 Frame 22... frame 11: 1 points were triangulated
+Frame 22... frame 12: 1 points were triangulated
 Frame 22... frame 16: 1 points were triangulated
 Frame 22... frame 18: 12 points were triangulated
-Frame 22... frame 19: 36 points were triangulated
-Frame 22... 285 points were retriangulated
+Frame 22... frame 19: 35 points were triangulated
+Frame 22... 1606 points were retriangulated
 Frame 22... current point cloud size is 6486
-Frame 23 is processing, 2106 inliers were found
-Frame 23... frame 15: 1 points were triangulated
+Frame 23 is processing, 2095 inliers were found
 Frame 23... frame 19: 1 points were triangulated
 Frame 23... frame 20: 37 points were triangulated
-Frame 23... frame 21: 3 points were triangulated
-Frame 23... 101 points were retriangulated
-Frame 23... current point cloud size is 6612
-Frame 24 is processing, 2151 inliers were found
-Frame 24... frame 18: 2 points were triangulated
-Frame 24... frame 19: 4 points were triangulated
-Frame 24... frame 20: 2 points were triangulated
-Frame 24... frame 21: 29 points were triangulated
+Frame 23... frame 21: 2 points were triangulated
+Frame 23... 120 points were retriangulated
+Frame 23... current point cloud size is 6606
+Frame 24 is processing, 2056 inliers were found
+Frame 24... frame 16: 1 points were triangulated
+Frame 24... frame 18: 5 points were triangulated
+Frame 24... frame 19: 5 points were triangulated
+Frame 24... frame 21: 28 points were triangulated
 Frame 24... frame 22: 1 points were triangulated
-Frame 24... 63 points were retriangulated
+Frame 24... 54 points were retriangulated
 Frame 24... current point cloud size is 6726
-Frame 25 is processing, 2148 inliers were found
-Frame 25... frame 15: 1 points were triangulated
-Frame 25... frame 18: 4 points were triangulated
-Frame 25... frame 19: 3 points were triangulated
+Frame 25 is processing, 2143 inliers were found
+Frame 25... frame 17: 3 points were triangulated
+Frame 25... frame 18: 1 points were triangulated
+Frame 25... frame 19: 4 points were triangulated
 Frame 25... frame 20: 1 points were triangulated
 Frame 25... frame 21: 1 points were triangulated
 Frame 25... frame 22: 78 points were triangulated
-Frame 25... frame 23: 3 points were triangulated
-Frame 25... 105 points were retriangulated
-Frame 25... current point cloud size is 6999
-Frame 26 is processing, 2226 inliers were found
-Frame 26... frame 19: 2 points were triangulated
-Frame 26... frame 20: 1 points were triangulated
+Frame 25... 23 points were retriangulated
+Frame 25... current point cloud size is 6990
+Frame 26 is processing, 2191 inliers were found
+Frame 26... frame 18: 1 points were triangulated
+Frame 26... frame 19: 3 points were triangulated
 Frame 26... frame 21: 1 points were triangulated
-Frame 26... frame 23: 106 points were triangulated
-Frame 26... frame 24: 9 points were triangulated
-Frame 26... 1494 points were retriangulated
-Frame 26... current point cloud size is 7356
-Frame 27 is processing, 2362 inliers were found
-Frame 27... frame 17: 1 points were triangulated
-Frame 27... frame 19: 1 points were triangulated
-Frame 27... frame 21: 2 points were triangulated
-Frame 27... frame 22: 1 points were triangulated
+Frame 26... frame 22: 2 points were triangulated
+Frame 26... frame 23: 108 points were triangulated
+Frame 26... frame 24: 36 points were triangulated
+Frame 26... 31 points were retriangulated
+Frame 26... current point cloud size is 7443
+Frame 27 is processing, 2323 inliers were found
+Frame 27... frame 16: 1 points were triangulated
+Frame 27... frame 20: 2 points were triangulated
+Frame 27... frame 21: 1 points were triangulated
 Frame 27... frame 23: 1 points were triangulated
-Frame 27... frame 24: 35 points were triangulated
-Frame 27... frame 25: 6 points were triangulated
-Frame 27... 366 points were retriangulated
-Frame 27... current point cloud size is 7497
-Frame 28 is processing, 2336 inliers were found
-Frame 28... frame 13: 1 points were triangulated
+Frame 27... frame 24: 10 points were triangulated
+Frame 27... frame 25: 5 points were triangulated
+Frame 27... 25 points were retriangulated
+Frame 27... current point cloud size is 7503
+Frame 28 is processing, 2372 inliers were found
 Frame 28... frame 22: 3 points were triangulated
 Frame 28... frame 23: 1 points were triangulated
-Frame 28... frame 25: 76 points were triangulated
-Frame 28... frame 26: 6 points were triangulated
-Frame 28... 146 points were retriangulated
-Frame 28... current point cloud size is 7758
-Frame 29 is processing, 2479 inliers were found
+Frame 28... frame 25: 77 points were triangulated
+Frame 28... 23 points were retriangulated
+Frame 28... current point cloud size is 7746
+Frame 29 is processing, 2456 inliers were found
 Frame 29... frame 14: 1 points were triangulated
-Frame 29... frame 22: 1 points were triangulated
+Frame 29... frame 22: 2 points were triangulated
+Frame 29... frame 23: 1 points were triangulated
 Frame 29... frame 24: 1 points were triangulated
-Frame 29... frame 26: 45 points were triangulated
-Frame 29... 106 points were retriangulated
-Frame 29... current point cloud size is 7902
-Frame 30 is processing, 2483 inliers were found
-Frame 30... frame 23: 2 points were triangulated
-Frame 30... frame 24: 1 points were triangulated
-Frame 30... frame 25: 1 points were triangulated
-Frame 30... frame 27: 28 points were triangulated
-Frame 30... frame 28: 46 points were triangulated
-Frame 30... 181 points were retriangulated
-Frame 30... current point cloud size is 8136
-Frame 31 is processing, 2559 inliers were found
-Frame 31... frame 10: 1 points were triangulated
+Frame 29... frame 26: 51 points were triangulated
+Frame 29... frame 27: 13 points were triangulated
+Frame 29... 25 points were retriangulated
+Frame 29... current point cloud size is 7953
+Frame 30 is processing, 2387 inliers were found
+Frame 30... frame 27: 15 points were triangulated
+Frame 30... 39 points were retriangulated
+Frame 30... current point cloud size is 7998
+Frame 31 is processing, 2373 inliers were found
 Frame 31... frame 20: 1 points were triangulated
 Frame 31... frame 22: 1 points were triangulated
-Frame 31... frame 24: 1 points were triangulated
+Frame 31... frame 24: 2 points were triangulated
 Frame 31... frame 25: 1 points were triangulated
-Frame 31... frame 26: 1 points were triangulated
 Frame 31... frame 27: 1 points were triangulated
-Frame 31... frame 28: 35 points were triangulated
-Frame 31... frame 29: 13 points were triangulated
-Frame 31... 1585 points were retriangulated
-Frame 31... current point cloud size is 8301
-Frame 32 is processing, 2606 inliers were found
-Frame 32... frame 28: 5 points were triangulated
-Frame 32... frame 29: 52 points were triangulated
-Frame 32... 424 points were retriangulated
-Frame 32... current point cloud size is 8472
-Frame 33 is processing, 2641 inliers were found
+Frame 31... frame 28: 79 points were triangulated
+Frame 31... frame 29: 4 points were triangulated
+Frame 31... 43 points were retriangulated
+Frame 31... current point cloud size is 8265
+Frame 32 is processing, 2537 inliers were found
+Frame 32... frame 24: 1 points were triangulated
+Frame 32... frame 25: 1 points were triangulated
+Frame 32... frame 27: 10 points were triangulated
+Frame 32... frame 28: 10 points were triangulated
+Frame 32... frame 29: 61 points were triangulated
+Frame 32... frame 30: 57 points were triangulated
+Frame 32... 96 points were retriangulated
+Frame 32... current point cloud size is 8685
+Frame 33 is processing, 2726 inliers were found
+Frame 33... frame 7: 1 points were triangulated
+Frame 33... frame 27: 14 points were triangulated
 Frame 33... frame 28: 1 points were triangulated
 Frame 33... frame 29: 1 points were triangulated
-Frame 33... frame 30: 28 points were triangulated
-Frame 33... 237 points were retriangulated
-Frame 33... current point cloud size is 8562
-Frame 34 is processing, 2711 inliers were found
-Frame 34... frame 26: 14 points were triangulated
-Frame 34... frame 27: 15 points were triangulated
-Frame 34... frame 29: 2 points were triangulated
-Frame 34... frame 30: 31 points were triangulated
-Frame 34... frame 31: 59 points were triangulated
-Frame 34... frame 32: 45 points were triangulated
-Frame 34... 172 points were retriangulated
-Frame 34... current point cloud size is 9060
-Frame 35 is processing, 2819 inliers were found
-Frame 35... frame 26: 3 points were triangulated
-Frame 35... frame 29: 1 points were triangulated
+Frame 33... frame 30: 1 points were triangulated
+Frame 33... frame 31: 14 points were triangulated
+Frame 33... 1633 points were retriangulated
+Frame 33... current point cloud size is 8781
+Frame 34 is processing, 2749 inliers were found
+Frame 34... frame 27: 5 points were triangulated
+Frame 34... frame 30: 2 points were triangulated
+Frame 34... frame 31: 46 points were triangulated
+Frame 34... 182 points were retriangulated
+Frame 34... current point cloud size is 8940
+Frame 35 is processing, 2762 inliers were found
+Frame 35... frame 26: 1 points were triangulated
 Frame 35... frame 31: 1 points were triangulated
-Frame 35... frame 32: 34 points were triangulated
-Frame 35... frame 33: 29 points were triangulated
-Frame 35... 250 points were retriangulated
-Frame 35... current point cloud size is 9264
-Frame 36 is processing, 2881 inliers were found
-Frame 36... frame 24: 1 points were triangulated
-Frame 36... frame 25: 2 points were triangulated
-Frame 36... frame 33: 25 points were triangulated
-Frame 36... frame 34: 2 points were triangulated
-Frame 36... 1621 points were retriangulated
-Frame 36... current point cloud size is 9354
-Frame 37 is processing, 2913 inliers were found
+Frame 35... frame 32: 73 points were triangulated
+Frame 35... frame 33: 3 points were triangulated
+Frame 35... 99 points were retriangulated
+Frame 35... current point cloud size is 9174
+Frame 36 is processing, 2836 inliers were found
+Frame 36... frame 25: 4 points were triangulated
+Frame 36... frame 32: 2 points were triangulated
+Frame 36... frame 33: 48 points were triangulated
+Frame 36... frame 34: 7 points were triangulated
+Frame 36... 105 points were retriangulated
+Frame 36... current point cloud size is 9357
+Frame 37 is processing, 2898 inliers were found
+Frame 37... frame 14: 1 points were triangulated
+Frame 37... frame 24: 1 points were triangulated
+Frame 37... frame 32: 1 points were triangulated
 Frame 37... frame 33: 1 points were triangulated
 Frame 37... frame 34: 10 points were triangulated
-Frame 37... frame 35: 5 points were triangulated
-Frame 37... 455 points were retriangulated
-Frame 37... current point cloud size is 9402
-Frame 38 is processing, 2917 inliers were found
-Frame 38... frame 23: 3 points were triangulated
+Frame 37... 180 points were retriangulated
+Frame 37... current point cloud size is 9399
+Frame 38 is processing, 2867 inliers were found
+Frame 38... frame 23: 1 points were triangulated
 Frame 38... frame 31: 1 points were triangulated
-Frame 38... frame 34: 1 points were triangulated
-Frame 38... frame 35: 44 points were triangulated
-Frame 38... frame 36: 2 points were triangulated
-Frame 38... 273 points were retriangulated
-Frame 38... current point cloud size is 9555
-Frame 39 is processing, 2896 inliers were found
-Frame 39... frame 33: 1 points were triangulated
-Frame 39... frame 34: 1 points were triangulated
-Frame 39... frame 36: 21 points were triangulated
-Frame 39... 297 points were retriangulated
-Frame 39... current point cloud size is 9624
-Frame 40 is processing, 2934 inliers were found
-Frame 40... frame 36: 2 points were triangulated
+Frame 38... frame 34: 2 points were triangulated
+Frame 38... frame 35: 49 points were triangulated
+Frame 38... frame 36: 3 points were triangulated
+Frame 38... 48 points were retriangulated
+Frame 38... current point cloud size is 9567
+Frame 39 is processing, 2855 inliers were found
+Frame 39... frame 23: 1 points were triangulated
+Frame 39... frame 36: 18 points were triangulated
+Frame 39... frame 37: 1 points were triangulated
+Frame 39... 96 points were retriangulated
+Frame 39... current point cloud size is 9627
+Frame 40 is processing, 2907 inliers were found
+Frame 40... frame 36: 1 points were triangulated
 Frame 40... frame 37: 17 points were triangulated
-Frame 40... frame 38: 2 points were triangulated
-Frame 40... 313 points were retriangulated
-Frame 40... current point cloud size is 9687
-Frame 41 is processing, 2949 inliers were found
-Frame 41... frame 15: 1 points were triangulated
-Frame 41... frame 32: 1 points were triangulated
-Frame 41... frame 38: 15 points were triangulated
+Frame 40... 96 points were retriangulated
+Frame 40... current point cloud size is 9681
+Frame 41 is processing, 2912 inliers were found
+Frame 41... frame 38: 17 points were triangulated
 Frame 41... frame 40: 1 points were triangulated
-Frame 41... 1657 points were retriangulated
-Frame 41... current point cloud size is 9741
-Frame 42 is processing, 2926 inliers were found
-Frame 42... frame 34: 1 points were triangulated
-Frame 42... frame 39: 27 points were triangulated
-Frame 42... 467 points were retriangulated
-Frame 42... current point cloud size is 9825
-Frame 43 is processing, 3042 inliers were found
-Frame 43... frame 39: 6 points were triangulated
-Frame 43... frame 40: 17 points were triangulated
-Frame 43... 313 points were retriangulated
-Frame 43... current point cloud size is 9894
-Frame 44 is processing, 3031 inliers were found
+Frame 41... 54 points were retriangulated
+Frame 41... current point cloud size is 9735
+Frame 42 is processing, 2953 inliers were found
+Frame 42... frame 32: 1 points were triangulated
+Frame 42... frame 33: 1 points were triangulated
+Frame 42... frame 39: 29 points were triangulated
+Frame 42... 121 points were retriangulated
+Frame 42... current point cloud size is 9828
+Frame 43 is processing, 2970 inliers were found
+Frame 43... frame 40: 18 points were triangulated
+Frame 43... 188 points were retriangulated
+Frame 43... current point cloud size is 9882
+Frame 44 is processing, 2960 inliers were found
+Frame 44... frame 39: 5 points were triangulated
 Frame 44... frame 41: 1 points were triangulated
-Frame 44... 309 points were retriangulated
-Frame 44... current point cloud size is 9897
-Frame 45 is processing, 3048 inliers were found
+Frame 44... 1629 points were retriangulated
+Frame 44... current point cloud size is 9900
+Frame 45 is processing, 3028 inliers were found
 Frame 45... frame 38: 1 points were triangulated
 Frame 45... frame 41: 7 points were triangulated
-Frame 45... frame 42: 6 points were triangulated
-Frame 45... 331 points were retriangulated
-Frame 45... current point cloud size is 9939
-Frame 46 is processing, 3001 inliers were found
-Frame 46... frame 38: 1 points were triangulated
+Frame 45... frame 42: 7 points were triangulated
+Frame 45... 241 points were retriangulated
+Frame 45... current point cloud size is 9945
+Frame 46 is processing, 3026 inliers were found
 Frame 46... frame 39: 1 points were triangulated
-Frame 46... frame 42: 3 points were triangulated
+Frame 46... frame 42: 2 points were triangulated
 Frame 46... frame 43: 5 points were triangulated
-Frame 46... 1650 points were retriangulated
+Frame 46... 183 points were retriangulated
 Frame 46... current point cloud size is 9969
-Frame 47 is processing, 2979 inliers were found
+Frame 47 is processing, 3013 inliers were found
 Frame 47... frame 33: 1 points were triangulated
-Frame 47... frame 39: 1 points were triangulated
+Frame 47... frame 37: 1 points were triangulated
 Frame 47... frame 42: 1 points were triangulated
 Frame 47... frame 43: 13 points were triangulated
-Frame 47... frame 44: 3 points were triangulated
-Frame 47... 503 points were retriangulated
-Frame 47... current point cloud size is 10026
-Frame 48 is processing, 2998 inliers were found
-Frame 48... frame 37: 1 points were triangulated
-Frame 48... frame 39: 1 points were triangulated
+Frame 47... frame 44: 1 points were triangulated
+Frame 47... 169 points were retriangulated
+Frame 47... current point cloud size is 10020
+Frame 48 is processing, 3061 inliers were found
+Frame 48... frame 38: 1 points were triangulated
+Frame 48... frame 40: 1 points were triangulated
+Frame 48... frame 41: 1 points were triangulated
 Frame 48... frame 44: 8 points were triangulated
-Frame 48... 325 points were retriangulated
-Frame 48... current point cloud size is 10056
-Frame 49 is processing, 3081 inliers were found
+Frame 48... 180 points were retriangulated
+Frame 48... current point cloud size is 10053
+Frame 49 is processing, 2954 inliers were found
+Frame 49... frame 39: 1 points were triangulated
 Frame 49... frame 40: 1 points were triangulated
-Frame 49... frame 45: 1 points were triangulated
-Frame 49... 323 points were retriangulated
-Frame 49... current point cloud size is 10062
-Frame 50 is processing, 3089 inliers were found
-Frame 50... frame 41: 1 points were triangulated
+Frame 49... frame 44: 2 points were triangulated
+Frame 49... 102 points were retriangulated
+Frame 49... current point cloud size is 10065
+Frame 50 is processing, 3054 inliers were found
 Frame 50... frame 45: 1 points were triangulated
-Frame 50... 344 points were retriangulated
+Frame 50... 120 points were retriangulated
 Frame 50... current point cloud size is 10068
-Frame 51 is processing, 3077 inliers were found
+Frame 51 is processing, 3057 inliers were found
+Frame 51... frame 36: 1 points were triangulated
 Frame 51... frame 46: 2 points were triangulated
-Frame 51... 1648 points were retriangulated
-Frame 51... current point cloud size is 10074
-Frame 52 is processing, 3082 inliers were found
-Frame 52... 514 points were retriangulated
-Frame 52... current point cloud size is 10074
-Frame 53 is processing, 3056 inliers were found
-Frame 53... frame 37: 1 points were triangulated
-Frame 53... frame 42: 1 points were triangulated
-Frame 53... frame 44: 1 points were triangulated
+Frame 51... 115 points were retriangulated
+Frame 51... current point cloud size is 10077
+Frame 52 is processing, 3060 inliers were found
+Frame 52... frame 47: 1 points were triangulated
+Frame 52... 66 points were retriangulated
+Frame 52... current point cloud size is 10080
+Frame 53 is processing, 2959 inliers were found
 Frame 53... frame 48: 3 points were triangulated
-Frame 53... 351 points were retriangulated
-Frame 53... current point cloud size is 10092
-Frame 54 is processing, 3098 inliers were found
+Frame 53... 145 points were retriangulated
+Frame 53... current point cloud size is 10089
+Frame 54 is processing, 3077 inliers were found
 Frame 54... frame 48: 1 points were triangulated
-Frame 54... 314 points were retriangulated
-Frame 54... current point cloud size is 10095
-Frame 55 is processing, 3047 inliers were found
-Frame 55... frame 49: 3 points were triangulated
-Frame 55... 349 points were retriangulated
-Frame 55... current point cloud size is 10104
-Frame 56 is processing, 3104 inliers were found
-Frame 56... frame 44: 1 points were triangulated
-Frame 56... frame 50: 2 points were triangulated
-Frame 56... 1641 points were retriangulated
-Frame 56... current point cloud size is 10113
-Frame 57 is processing, 3092 inliers were found
-Frame 57... frame 44: 1 points were triangulated
-Frame 57... 519 points were retriangulated
-Frame 57... current point cloud size is 10116
-Frame 58 is processing, 3105 inliers were found
-Frame 58... frame 50: 6 points were triangulated
-Frame 58... frame 53: 1 points were triangulated
-Frame 58... 351 points were retriangulated
-Frame 58... current point cloud size is 10137
-Frame 59 is processing, 3116 inliers were found
-Frame 59... frame 42: 1 points were triangulated
-Frame 59... frame 50: 1 points were triangulated
-Frame 59... frame 51: 1 points were triangulated
-Frame 59... frame 53: 1 points were triangulated
-Frame 59... 322 points were retriangulated
-Frame 59... current point cloud size is 10149
-Frame 60 is processing, 3130 inliers were found
-Frame 60... frame 50: 1 points were triangulated
-Frame 60... frame 52: 1 points were triangulated
-Frame 60... 349 points were retriangulated
-Frame 60... current point cloud size is 10155
-Frame 0... 19 points were retriangulated
-Frame 0... current point cloud size is 10155
-Frame 1... 10 points were retriangulated
-Frame 1... current point cloud size is 10155
-Frame 2... 8 points were retriangulated
-Frame 2... current point cloud size is 10155
+Frame 54... 198 points were retriangulated
+Frame 54... current point cloud size is 10092
+Frame 55 is processing, 3051 inliers were found
+Frame 55... frame 42: 2 points were triangulated
+Frame 55... frame 44: 2 points were triangulated
+Frame 55... frame 49: 2 points were triangulated
+Frame 55... frame 50: 6 points were triangulated
+Frame 55... 1632 points were retriangulated
+Frame 55... current point cloud size is 10128
+Frame 56 is processing, 3087 inliers were found
+Frame 56... frame 50: 4 points were triangulated
+Frame 56... 248 points were retriangulated
+Frame 56... current point cloud size is 10140
+Frame 57 is processing, 3108 inliers were found
+Frame 57... frame 50: 1 points were triangulated
+Frame 57... frame 51: 1 points were triangulated
+Frame 57... 184 points were retriangulated
+Frame 57... current point cloud size is 10146
+Frame 58 is processing, 3051 inliers were found
+Frame 58... frame 44: 1 points were triangulated
+Frame 58... frame 45: 1 points were triangulated
+Frame 58... frame 50: 2 points were triangulated
+Frame 58... frame 51: 4 points were triangulated
+Frame 58... frame 52: 1 points were triangulated
+Frame 58... 190 points were retriangulated
+Frame 58... current point cloud size is 10173
+Frame 59 is processing, 3119 inliers were found
+Frame 59... frame 52: 1 points were triangulated
+Frame 59... 194 points were retriangulated
+Frame 59... current point cloud size is 10176
+Frame 60 is processing, 3122 inliers were found
+Frame 60... 108 points were retriangulated
+Frame 60... current point cloud size is 10176
+Frame 0... 10 points were retriangulated
+Frame 0... current point cloud size is 10176
+Frame 1... 7 points were retriangulated
+Frame 1... current point cloud size is 10176
+Frame 2... 7 points were retriangulated
+Frame 2... current point cloud size is 10176
 Frame 3... 2 points were retriangulated
-Frame 3... current point cloud size is 10155
-Frame 4... 1 points were retriangulated
-Frame 4... current point cloud size is 10155
-Frame 5... 5 points were retriangulated
-Frame 5... current point cloud size is 10155
-Frame 6... 3 points were retriangulated
-Frame 6... current point cloud size is 10155
-Frame 7... current point cloud size is 10155
-Frame 8... 2 points were retriangulated
-Frame 8... current point cloud size is 10155
-Frame 9... current point cloud size is 10155
+Frame 3... current point cloud size is 10176
+Frame 4... 2 points were retriangulated
+Frame 4... current point cloud size is 10176
+Frame 5... 1 points were retriangulated
+Frame 5... current point cloud size is 10176
+Frame 6... 1 points were retriangulated
+Frame 6... current point cloud size is 10176
+Frame 7... 1 points were retriangulated
+Frame 7... current point cloud size is 10176
+Frame 8... 4 points were retriangulated
+Frame 8... current point cloud size is 10176
+Frame 9... 1 points were retriangulated
+Frame 9... current point cloud size is 10176
 Frame 10... 1 points were retriangulated
-Frame 10... current point cloud size is 10155
-Frame 11... 1 points were retriangulated
-Frame 11... current point cloud size is 10155
-Frame 12... 3 points were retriangulated
-Frame 12... current point cloud size is 10155
-Frame 13... 2 points were retriangulated
-Frame 13... current point cloud size is 10155
-Frame 14... 2 points were retriangulated
-Frame 14... current point cloud size is 10155
+Frame 10... current point cloud size is 10176
+Frame 11... 3 points were retriangulated
+Frame 11... current point cloud size is 10176
+Frame 12... current point cloud size is 10176
+Frame 13... current point cloud size is 10176
+Frame 14... 3 points were retriangulated
+Frame 14... current point cloud size is 10176
 Frame 15... 1 points were retriangulated
-Frame 15... current point cloud size is 10155
+Frame 15... current point cloud size is 10176
 Frame 16... 1 points were retriangulated
-Frame 16... current point cloud size is 10155
-Frame 17... current point cloud size is 10155
+Frame 16... current point cloud size is 10176
+Frame 17... 1 points were retriangulated
+Frame 17... current point cloud size is 10176
 Frame 18... 1 points were retriangulated
-Frame 18... current point cloud size is 10155
-Frame 19... current point cloud size is 10155
-Frame 20... 4 points were retriangulated
-Frame 20... current point cloud size is 10155
-Frame 21... 2 points were retriangulated
-Frame 21... current point cloud size is 10155
+Frame 18... current point cloud size is 10176
+Frame 19... current point cloud size is 10176
+Frame 20... 1 points were retriangulated
+Frame 20... current point cloud size is 10176
+Frame 21... 1 points were retriangulated
+Frame 21... current point cloud size is 10176
 Frame 22... 1 points were retriangulated
-Frame 22... current point cloud size is 10155
-Frame 23... current point cloud size is 10155
+Frame 22... current point cloud size is 10176
+Frame 23... current point cloud size is 10176
 Frame 24... 1 points were retriangulated
-Frame 24... current point cloud size is 10155
-Frame 25... 1 points were retriangulated
-Frame 25... current point cloud size is 10155
-Frame 26... current point cloud size is 10155
-Frame 27... current point cloud size is 10155
-Frame 28... current point cloud size is 10155
-Frame 29... 1 points were retriangulated
-Frame 29... current point cloud size is 10155
-Frame 30... current point cloud size is 10155
-Frame 31... current point cloud size is 10155
-Frame 32... 1 points were retriangulated
-Frame 32... current point cloud size is 10155
-Frame 33... current point cloud size is 10155
-Frame 34... 1 points were retriangulated
-Frame 34... current point cloud size is 10155
-Frame 35... current point cloud size is 10155
-Frame 36... current point cloud size is 10155
-Frame 37... current point cloud size is 10155
-Frame 38... current point cloud size is 10155
-Frame 39... current point cloud size is 10155
-Frame 40... 1 points were retriangulated
-Frame 40... current point cloud size is 10155
-Frame 41... current point cloud size is 10155
-Frame 42... 2 points were retriangulated
-Frame 42... current point cloud size is 10155
-Frame 43... current point cloud size is 10155
-Frame 44... current point cloud size is 10155
-Frame 45... current point cloud size is 10155
-Frame 46... current point cloud size is 10155
-Frame 47... current point cloud size is 10155
-Frame 48... current point cloud size is 10155
-Frame 49... current point cloud size is 10155
-Frame 50... current point cloud size is 10155
-Frame 51... current point cloud size is 10155
-Frame 52... current point cloud size is 10155
-Frame 53... current point cloud size is 10155
-Frame 54... current point cloud size is 10155
-Frame 55... current point cloud size is 10155
-Frame 56... current point cloud size is 10155
-Frame 57... 2 points were retriangulated
-Frame 57... current point cloud size is 10155
-Frame 58... current point cloud size is 10155
-Frame 59... 1 points were retriangulated
-Frame 59... current point cloud size is 10155
-Frame 60... current point cloud size is 10155
+Frame 24... current point cloud size is 10176
+Frame 25... current point cloud size is 10176
+Frame 26... current point cloud size is 10176
+Frame 27... current point cloud size is 10176
+Frame 28... current point cloud size is 10176
+Frame 29... current point cloud size is 10176
+Frame 30... current point cloud size is 10176
+Frame 31... current point cloud size is 10176
+Frame 32... current point cloud size is 10176
+Frame 33... current point cloud size is 10176
+Frame 34... current point cloud size is 10176
+Frame 35... 1 points were retriangulated
+Frame 35... current point cloud size is 10176
+Frame 36... current point cloud size is 10176
+Frame 37... current point cloud size is 10176
+Frame 38... current point cloud size is 10176
+Frame 39... current point cloud size is 10176
+Frame 40... current point cloud size is 10176
+Frame 41... 1 points were retriangulated
+Frame 41... current point cloud size is 10176
+Frame 42... 1 points were retriangulated
+Frame 42... current point cloud size is 10176
+Frame 43... current point cloud size is 10176
+Frame 44... current point cloud size is 10176
+Frame 45... 1 points were retriangulated
+Frame 45... current point cloud size is 10176
+Frame 46... 1 points were retriangulated
+Frame 46... current point cloud size is 10176
+Frame 47... current point cloud size is 10176
+Frame 48... current point cloud size is 10176
+Frame 49... current point cloud size is 10176
+Frame 50... current point cloud size is 10176
+Frame 51... 1 points were retriangulated
+Frame 51... current point cloud size is 10176
+Frame 52... current point cloud size is 10176
+Frame 53... current point cloud size is 10176
+Frame 54... current point cloud size is 10176
+Frame 55... current point cloud size is 10176
+Frame 56... current point cloud size is 10176
+Frame 57... current point cloud size is 10176
+Frame 58... current point cloud size is 10176
+Frame 59... current point cloud size is 10176
+Frame 60... current point cloud size is 10176
