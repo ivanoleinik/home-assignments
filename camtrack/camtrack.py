@@ -4,14 +4,13 @@ __all__ = [
     'track_and_calc_colors'
 ]
 
-from collections import defaultdict
 from typing import List, Optional, Tuple
 
 import cv2
 import frameseq
 import numpy as np
+import sortednp as snp
 from _camtrack import (
-    Correspondences,
     PointCloudBuilder,
     create_cli,
     calc_point_cloud_colors,
@@ -19,13 +18,23 @@ from _camtrack import (
     to_opencv_camera_mat3x3,
     view_mat3x4_to_pose,
     build_correspondences,
-    compute_reprojection_errors,
+    project_points,
     rodrigues_and_translation_to_view_mat3x4,
     triangulate_correspondences,
     TriangulationParameters,
 )
+from _corners import filter_frame_corners
 from corners import CornerStorage
 from data3d import CameraParameters, PointCloud, Pose
+
+# !!! DON'T TOUCH, GOOD CONSTANTS !!!
+MAX_REPROJECTION_ERROR = 8.0
+MIN_TRIANGULATION_ANGLE_DEG = 1.0
+MIN_DEPTH = 0.1
+MIN_RETRIANGULATION_FRAME_COUNT = 10
+MIN_RETRIANGULATION_INLIERS = 6
+RETRIANGULATION_INLIERS_ITERATIONS = 25
+SEED = 42
 
 
 def track_and_calc_colors(camera_parameters: CameraParameters,
@@ -43,32 +52,31 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
         rgb_sequence[0].shape[0]
     )
 
-    triangulation_parameters = TriangulationParameters(max_reprojection_error=1.0,
-                                                       min_triangulation_angle_deg=1.15,
-                                                       min_depth=0.1)
-    correspondences = build_correspondences(corner_storage[known_view_1[0]],
-                                            corner_storage[known_view_2[0]])
-    points, ids, _ = triangulate_correspondences(correspondences,
-                                                 pose_to_view_mat3x4(known_view_1[1]),
-                                                 pose_to_view_mat3x4(known_view_2[1]),
-                                                 intrinsic_mat,
-                                                 triangulation_parameters)
-    point_cloud_builder = PointCloudBuilder(ids, points)
+    triangulation_parameters = TriangulationParameters(max_reprojection_error=MAX_REPROJECTION_ERROR,
+                                                       min_triangulation_angle_deg=MIN_TRIANGULATION_ANGLE_DEG,
+                                                       min_depth=MIN_DEPTH)
+    frame1, pose1 = known_view_1
+    frame2, pose2 = known_view_2
+    correspondences = build_correspondences(corner_storage[frame1],
+                                            corner_storage[frame2])
+    view_mat1 = pose_to_view_mat3x4(pose1)
+    view_mat2 = pose_to_view_mat3x4(pose2)
+    points3d, ids, _ = triangulate_correspondences(correspondences,
+                                                   view_mat1,
+                                                   view_mat2,
+                                                   intrinsic_mat,
+                                                   triangulation_parameters)
+    point_cloud_builder = PointCloudBuilder(ids, points3d)
+
     seq_size = len(rgb_sequence)
     view_mats = [None] * seq_size
+    view_mats[frame1] = view_mat1
+    view_mats[frame2] = view_mat2
+
     changed = True
-
-    corners_to_retr = set()
-    corners_in_frames, corners_retr_mark = defaultdict(list), defaultdict(int)
-    for frame in range(seq_size):
-        corners = corner_storage[frame]
-        for idx, corner in enumerate(corners.ids.flatten()):
-            corners_in_frames[corner].append((frame, idx))
-
-    np.random.seed(1337)
-
     while changed:
         changed = False
+        retr_frames = []
         for frame in range(seq_size):
             corners = corner_storage[frame]
             if view_mats[frame] is None:
@@ -77,71 +85,100 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                 points = np.array([p for idx, p
                                    in zip(corners.ids, corners.points)
                                    if idx in point_cloud_builder.ids])
-                if points.shape[0] > 5:
-                    retval, rvec, tvec, inliers = cv2.solvePnPRansac(point_cloud_builder.points[intersection],
-                                                                     points,
-                                                                     intrinsic_mat,
-                                                                     None)
+                if len(points) >= 3:
+                    retval, rvec, tvec, inliers = cv2.solvePnPRansac(
+                        objectPoints=point_cloud_builder.points[intersection],
+                        imagePoints=points,
+                        cameraMatrix=intrinsic_mat,
+                        distCoeffs=None,
+                        flags=cv2.SOLVEPNP_EPNP,
+                        confidence=0.99,
+                        reprojectionError=MAX_REPROJECTION_ERROR
+                    )
                     if retval:
-                        print(f'Frame {frame} is processing, {len(inliers)} inliers were found')
+                        _, rvec, tvec = cv2.solvePnP(objectPoints=point_cloud_builder.points[intersection][inliers],
+                                                     imagePoints=points[inliers],
+                                                     cameraMatrix=intrinsic_mat,
+                                                     distCoeffs=None,
+                                                     flags=cv2.SOLVEPNP_ITERATIVE,
+                                                     useExtrinsicGuess=True,
+                                                     rvec=rvec,
+                                                     tvec=tvec)
                         view_mats[frame] = rodrigues_and_translation_to_view_mat3x4(rvec, tvec)
+                        print(f'Frame {frame} is processing, {len(inliers)} inliers were found')
                         changed = True
 
-                        for corner in corners.ids.flatten():
-                            if corner in point_cloud_builder.ids:
-                                corners_retr_mark[corner] += 1
-                                if corners_retr_mark[corner] > 10:
-                                    corners_to_retr.add(corner)
+                        for i in range(seq_size):
+                            if view_mats[i] is not None:
+                                correspondences = build_correspondences(corner_storage[i],
+                                                                        filter_frame_corners(corners, inliers),
+                                                                        point_cloud_builder.ids)
+                                if len(correspondences.ids):
+                                    new_points, new_ids, _ = triangulate_correspondences(correspondences,
+                                                                                         view_mats[i],
+                                                                                         view_mats[frame],
+                                                                                         intrinsic_mat,
+                                                                                         triangulation_parameters)
+                                    if len(new_points):
+                                        print(f'Frame {frame}... frame {i}: {len(new_points)} points were triangulated')
+                                    point_cloud_builder.add_points(new_ids, new_points)
 
-            if view_mats[frame] is not None:
-                for i in range(frame):
-                    if view_mats[i] is not None:
-                        correspondences = build_correspondences(corner_storage[i],
-                                                                corners,
-                                                                point_cloud_builder.ids)
-                        if len(correspondences.ids) > 0:
-                            new_points, new_ids, _ = triangulate_correspondences(correspondences,
-                                                                                 view_mats[i],
-                                                                                 view_mats[frame],
-                                                                                 intrinsic_mat,
-                                                                                 triangulation_parameters)
-                            if len(new_points) > 0:
-                                print(f'Frame {frame}... frame {i}: {len(new_points)} points were triangulated')
-                            point_cloud_builder.add_points(new_ids, new_points)
-
-                retriangled = []
-                for corner in corners_to_retr:
-                    frs, pts, mts = [], [], []
-                    for fr, idx in corners_in_frames[corner]:
-                        if view_mats[fr] is not None:
-                            frs.append(fr)
-                            pts.append(corner_storage[fr].points[idx])
-                            mts.append(view_mats[fr])
-                    p, inl = None, None
-                    for _ in range(4):
-                        fr1, fr2 = np.random.choice(len(frs), 2, False)
-                        retr_pts, _, _ = triangulate_correspondences(Correspondences(np.array([0]),
-                                                                                     np.array([pts[fr1]]),
-                                                                                     np.array([pts[fr2]])),
-                                                                     mts[fr1], mts[fr2], intrinsic_mat,
-                                                                     triangulation_parameters)
-                        if len(retr_pts) > 0:
-                            cur_inls = np.sum(np.array([compute_reprojection_errors(retr_pts, np.array([pt]),
-                                                                                    intrinsic_mat @ view_mats[
-                                                                                        f]).flatten()[0]
-                                                        for f, pt in zip(frs, pts)]) < 2.0)
-                            if p is None or cur_inls < inl:
-                                inl = cur_inls
-                                p = retr_pts[0]
-                    if p is not None:
-                        corners_retr_mark[corner] = 0
-                        retriangled.append(corner)
-                        point_cloud_builder.update_points(np.array([corner]), np.array([p]))
-                if len(retriangled) > 0:
-                    for p in retriangled:
-                        corners_to_retr.remove(p)
-                    print(f'Frame {frame}... {len(retriangled)} points were retriangulated')
-                print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
+                        retr_frames.append(frame)
+                        if len(retr_frames) >= MIN_RETRIANGULATION_FRAME_COUNT:
+                            proj = np.array([intrinsic_mat @ view_mats[frame]
+                                             for frame in retr_frames])
+                            intersection = snp.intersect(corner_storage[retr_frames[0]].ids.flatten(),  # first frame
+                                                         corner_storage[retr_frames[-1]].ids.flatten())  # last frame
+                            if len(intersection):
+                                points = []
+                                for retr_frame in retr_frames:  # choose corners
+                                    _, (_, ids) = snp.intersect(intersection,
+                                                                corner_storage[retr_frame].ids.flatten(),
+                                                                indices=True)
+                                    points.append(corner_storage[retr_frame].points[ids])
+                                points = np.array(points)
+                                rows, cols = points.shape[:2]
+                                np.random.seed(SEED)
+                                for iteration in range(RETRIANGULATION_INLIERS_ITERATIONS):  # search inliers
+                                    ids1, ids2 = np.argsort(np.random.rand(rows, cols), axis=0)[:2]
+                                    points1 = np.dstack((np.choose(ids1, points[:, :, 0]),
+                                                         np.choose(ids1, points[:, :, 1])))[0]
+                                    points2 = np.dstack((np.choose(ids2, points[:, :, 0]),
+                                                         np.choose(ids2, points[:, :, 1])))[0]
+                                    _, _, vh = np.linalg.svd(np.stack([  # solve equation system using svd
+                                        proj[ids1][:, 2] * points1[:, [0]] - proj[ids1][:, 0],
+                                        proj[ids1][:, 2] * points1[:, [1]] - proj[ids1][:, 1],
+                                        proj[ids2][:, 2] * points2[:, [0]] - proj[ids2][:, 0],
+                                        proj[ids2][:, 2] * points2[:, [1]] - proj[ids2][:, 1]], axis=1))
+                                    guess = vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]]
+                                    err = np.array([np.linalg.norm(  # reprojection error
+                                        points[i] - project_points(guess, proj[i]), axis=1)
+                                        for i in range(rows)])
+                                    mean = np.mean(err, axis=0)
+                                    inliers_mask = err < MAX_REPROJECTION_ERROR
+                                    inliers_cnt = np.count_nonzero(inliers_mask, axis=0)
+                                    if iteration:
+                                        mask = np.logical_and(err_min < mean,
+                                                              inliers_max <= inliers_cnt)
+                                        err_min = np.where(mask, mean, err_min)
+                                        inliers_max = np.where(mask, inliers_cnt, inliers_max)
+                                        inliers[:, mask] = inliers_mask[:, mask]
+                                    else:
+                                        err_min = mean
+                                        inliers_max = inliers_cnt
+                                        inliers = inliers_mask
+                                projs = np.repeat(proj[:, np.newaxis], cols, axis=1)
+                                projs[~inliers] = np.zeros(proj.shape[1:])
+                                ok = np.count_nonzero(inliers, axis=0) > MIN_RETRIANGULATION_INLIERS  # retriangulated
+                                _, _, vh = np.linalg.svd(np.swapaxes(np.concatenate(np.stack([
+                                    projs[:, ok][:, :, 2] * points[:, ok][:, :, [0]] - projs[:, ok][:, :, 0],
+                                    projs[:, ok][:, :, 2] * points[:, ok][:, :, [1]] - projs[:, ok][:, :, 1]], axis=1),
+                                    axis=0), 0, 1))  # solve equation system
+                                point_cloud_builder.add_points(intersection[ok],
+                                                               vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]])
+                                print(f'Frame {frame}... {sum(ok)} points were retriangulated')
+                            retr_frames.clear()
+                        print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
 
     calc_point_cloud_colors(
         point_cloud_builder,
