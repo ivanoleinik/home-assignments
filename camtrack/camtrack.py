@@ -40,6 +40,8 @@ MIN_DEPTH = 0.1
 MIN_RETRIANGULATION_FRAME_COUNT = 10
 MIN_RETRIANGULATION_INLIERS = 6
 RETRIANGULATION_INLIERS_ITERATIONS = 25
+CONFIDENCE = 0.99
+THRESHOLD = 1
 SEED = 42
 
 
@@ -90,8 +92,8 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                     correspondences.points_2,
                     intrinsic_mat,
                     method=cv2.RANSAC,
-                    prob=0.99,
-                    threshold=1
+                    prob=CONFIDENCE,
+                    threshold=THRESHOLD
                 )
                 correspondences = remove_correspondences_with_ids(
                     correspondences, np.argwhere(mat_mask.flatten() == 0).astype(np.int64))
@@ -156,7 +158,7 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                         cameraMatrix=intrinsic_mat,
                         distCoeffs=None,
                         flags=cv2.SOLVEPNP_EPNP,
-                        confidence=0.99,
+                        confidence=CONFIDENCE,
                         reprojectionError=MAX_REPROJECTION_ERROR
                     )
                     if retval:
