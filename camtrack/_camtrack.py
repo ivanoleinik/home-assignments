@@ -13,6 +13,7 @@ __all__ = [
     'eye3x4',
     'pose_to_view_mat3x4',
     'project_points',
+    'remove_correspondences_with_ids',
     'rodrigues_and_translation_to_view_mat3x4',
     'to_camera_center',
     'to_opencv_camera_mat3x3',
@@ -129,6 +130,12 @@ TriangulationParameters = namedtuple(
 )
 
 
+def remove_correspondences_with_ids(correspondences: Correspondences,
+                                     ids_to_remove: np.ndarray) \
+        -> Correspondences:
+    return _remove_correspondences_with_ids(correspondences, ids_to_remove)
+
+
 def _remove_correspondences_with_ids(correspondences: Correspondences,
                                      ids_to_remove: np.ndarray) \
         -> Correspondences:
@@ -146,8 +153,8 @@ def _remove_correspondences_with_ids(correspondences: Correspondences,
 
 def build_correspondences(corners_1: FrameCorners, corners_2: FrameCorners,
                           ids_to_remove=None) -> Correspondences:
-    ids_1 = corners_1.ids.flatten()
-    ids_2 = corners_2.ids.flatten()
+    ids_1 = corners_1.ids.flatten().astype(np.int64)
+    ids_2 = corners_2.ids.flatten().astype(np.int64)
     _, (indices_1, indices_2) = snp.intersect(ids_1, ids_2, indices=True)
     corrs = Correspondences(
         ids_1[indices_1],
@@ -363,8 +370,7 @@ def calc_point_cloud_colors(pc_builder: PointCloudBuilder,
                             max_reproj_error: float) -> None:
     # pylint:disable=too-many-arguments
     # pylint:disable=too-many-locals
-
-    point_cloud_points = np.zeros((corner_storage.max_corner_id() + 1, 3))
+    point_cloud_points = np.zeros((corner_storage.max_corner_id().astype(np.int64) + 1, 3))
     point_cloud_points[pc_builder.ids.flatten()] = pc_builder.points
 
     color_sums = np.zeros_like(point_cloud_points)
@@ -375,7 +381,7 @@ def calc_point_cloud_colors(pc_builder: PointCloudBuilder,
                            length=len(view_mats)) as progress_bar:
         for image, view, corners in progress_bar:
             proj_mat = intrinsic_mat @ view
-            points3d = point_cloud_points[corners.ids.flatten()]
+            points3d = point_cloud_points[corners.ids.flatten().astype(np.int64)]
             with np.errstate(invalid='ignore'):
                 errors = compute_reprojection_errors(points3d, corners.points,
                                                      proj_mat)
@@ -386,20 +392,20 @@ def calc_point_cloud_colors(pc_builder: PointCloudBuilder,
                 (corners.points[:, 0] >= 0) &
                 (corners.points[:, 1] >= 0) &
                 (corners.points[:, 0] < image.shape[1] - 0.5) &
-                (corners.points[:, 1] < image.shape[0] - 0.5)).flatten()
-            ids_to_process = corners.ids[consistency_mask].flatten()
+                (corners.points[:, 1] < image.shape[0] - 0.5)).flatten().astype(np.bool)
+            ids_to_process = corners.ids[consistency_mask].flatten().astype(np.int64)
             corner_points = np.round(
                 corners.points[consistency_mask]
-            ).astype(np.int32)
+            ).astype(np.int64)
 
-            rows = corner_points[:, 1].flatten()
-            cols = corner_points[:, 0].flatten()
+            rows = corner_points[:, 1].flatten().astype(np.int64)
+            cols = corner_points[:, 0].flatten().astype(np.int64)
             color_sums[ids_to_process] += image[rows, cols]
             color_counts[ids_to_process] += 1
 
     nonzero_mask = (color_counts[:, 0] != 0).flatten()
     color_sums[nonzero_mask] /= color_counts[nonzero_mask]
-    colors = color_sums[pc_builder.ids.flatten()]
+    colors = color_sums[pc_builder.ids.flatten().astype(np.int64)]
 
     pc_builder.set_colors(colors)
 

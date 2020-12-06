@@ -34,7 +34,7 @@ DATASET_CONFIG_SCHEMA = Schema({
             'camera': str,
             'ground_truth': str,
             'rgb': str,
-            Optional('initial_frames'): Any(_check_frame_pair, Default(None))
+            'initial_frames': Any(_check_frame_pair, Default(None))
         }
     }
 })
