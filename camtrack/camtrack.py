@@ -42,6 +42,7 @@ MIN_RETRIANGULATION_INLIERS = 6
 RETRIANGULATION_INLIERS_ITERATIONS = 25
 CONFIDENCE = 0.99
 THRESHOLD = 1
+HOMOGRAPHY_THRESHOLD = 0.4
 SEED = 42
 
 
@@ -62,6 +63,7 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                                                        min_depth=MIN_DEPTH)
     seq_size = len(rgb_sequence)
 
+    frame1, frame2 = None, None
     if known_view_1 is None or known_view_2 is None:
         view_mat1 = eye3x4()
         frame_pairs = np.array([(f, s) for f in range(seq_size - MIN_INITIAL_FRAMES_DISTANCE)
@@ -86,7 +88,7 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                 corner_storage[frame_2].points[idx2]
             )
             cnt = -1
-            if len(correspondences.ids) >= 3:
+            if len(correspondences.ids) >= 7:
                 mat, mat_mask = cv2.findEssentialMat(
                     correspondences.points_1,
                     correspondences.points_2,
@@ -95,23 +97,33 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                     prob=CONFIDENCE,
                     threshold=THRESHOLD
                 )
-                correspondences = remove_correspondences_with_ids(
-                    correspondences, np.argwhere(mat_mask.flatten() == 0).astype(np.int64))
 
-                rot_1, rot_2, translation = cv2.decomposeEssentialMat(mat)
-                for rot in (rot_1.T, rot_2.T):
-                    for tran in (translation, -translation):
-                        view = pose_to_view_mat3x4(Pose(rot, rot @ tran))
-                        pt_cnt = len(triangulate_correspondences(
-                            correspondences,
-                            view_mat1,
-                            view,
-                            intrinsic_mat,
-                            triangulation_parameters
-                        )[1])
-                        if cnt < pt_cnt:
-                            view_2 = view
-                            cnt = pt_cnt
+                if mat is not None and mat_mask is not None:
+                    correspondences = remove_correspondences_with_ids(
+                        correspondences, np.argwhere(mat_mask.flatten() == 0).astype(np.int64))
+
+                    _, homography_mask = cv2.findHomography(correspondences[1],
+                                                            correspondences[2],
+                                                            method=cv2.RANSAC,
+                                                            ransacReprojThreshold=THRESHOLD,
+                                                            confidence=CONFIDENCE)
+
+                    if homography_mask is not None:
+                        if np.count_nonzero(homography_mask) / np.count_nonzero(mat_mask) < HOMOGRAPHY_THRESHOLD:
+                            rot_1, rot_2, translation = cv2.decomposeEssentialMat(mat)
+                            for rot in (rot_1.T, rot_2.T):
+                                for tran in (translation, -translation):
+                                    view = pose_to_view_mat3x4(Pose(rot, rot @ tran))
+                                    pt_cnt = len(triangulate_correspondences(
+                                        correspondences,
+                                        view_mat1,
+                                        view,
+                                        intrinsic_mat,
+                                        triangulation_parameters
+                                    )[1])
+                                    if cnt < pt_cnt:
+                                        view_2 = view
+                                        cnt = pt_cnt
 
             if best_cnt < cnt:
                 frame1 = frame_1
@@ -125,6 +137,10 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
         frame2, pose2 = known_view_2
         view_mat1 = pose_to_view_mat3x4(pose1)
         view_mat2 = pose_to_view_mat3x4(pose2)
+
+    if frame1 is None or frame2 is None:
+        print("Initialization failed. No good pair of frames was found.")
+        exit(0)
 
     correspondences = build_correspondences(corner_storage[frame1],
                                             corner_storage[frame2])
