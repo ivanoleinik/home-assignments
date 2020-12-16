@@ -4,7 +4,6 @@ __all__ = [
     'track_and_calc_colors'
 ]
 
-import sys
 from typing import List, Optional, Tuple
 
 import cv2
@@ -163,8 +162,6 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
 
     def retriangulate(to_retr):
         ok = None
-        print(to_retr.shape)
-        sys.stdout.flush()
         if len(to_retr.shape) > 2:
             rows, cols = to_retr.shape[:2]
             np.random.seed(SEED)
@@ -300,7 +297,7 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                         print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
 
     if seq_size < 100:
-        frames, corners_ids, points_ids = [], [], []
+        to_retr, frames, corners_ids, points_ids = None, [], [], []
         for frame in range(seq_size):
             c_ids, pt_ids = snp.intersect(corner_storage[frame].ids.flatten(),
                                           point_cloud_builder.ids.flatten(),
@@ -308,10 +305,15 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
             inliers = calc_inlier_indices(point_cloud_builder.points[pt_ids],
                                           corner_storage[frame].points[c_ids],
                                           intrinsic_mat @ view_mats[frame], 1.0)
+            if to_retr is None:
+                to_retr = corner_storage[frame].points[c_ids]
+            else:
+                to_retr = np.append(to_retr, corner_storage[frame].points[c_ids], axis=0)
             frames.extend([frame] * len(inliers))
             corners_ids.extend(c_ids[inliers])
             points_ids.extend(pt_ids[inliers])
 
+        retriangulate(to_retr)
         mats = np.array([np.concatenate([cv2.Rodrigues(view_mat[:, :3])[0].squeeze(),
                                          view_mat[:, 3]])
                          for view_mat in view_mats])
@@ -329,24 +331,25 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
 
         def err():
             return np.array([verr(np.concatenate([mats[frame],
-                                               v[id3d]]),
-                               corner_storage[frame].points[id2d])
-                             for frame, id2d, id3d in zip(frames, corners_ids, points_ids)])
+                                                  v[point_id]]),
+                                  corner_storage[frame].points[corner_id])
+                             for frame, corner_id, point_id in zip(frames, corners_ids, points_ids)])
 
         prev_err = err().mean()
-        for idx in range(BUNDLE_ADJUSTMENT_ITERATIONS):
+        for _ in range(BUNDLE_ADJUSTMENT_ITERATIONS):
             A = np.zeros((len(frames), sz + len(v.reshape(-1))))
-            for frame, corners_id, point_id in zip(frames, corners_ids, points_ids):
+            for idx, (frame, corner_id, point_id) in enumerate(zip(frames, corners_ids, points_ids)):
                 xk = np.concatenate([mats[frame], v[point_id]])
                 derivative = approx_fprime(xk=xk,
-                                           f=lambda xk: verr(xk, corner_storage[frame].points[corners_id]),
+                                           f=lambda xk: verr(xk, corner_storage[frame].points[corner_id]),
                                            epsilon=np.full_like(xk, EPSILON))
                 A[idx, (sz + point_id * 3): (sz + (point_id + 1) * 3)] = derivative[6:]
                 A[idx, (frame * 6): ((frame + 1) * 6)] = derivative[:6]
             grad = A.T @ err()
             d = np.diag(np.diag(A.T @ A)) * 10 + A.T @ A
             V, Wi = d[:sz, sz:], np.linalg.inv(d[sz:, sz:])
-            Vt = V.T, V_Wi = V @ Wi
+            Vt = V.T
+            V_Wi = V @ Wi
             diff = np.linalg.solve(d[:sz, :sz] - V_Wi @ Vt, V_Wi @ grad[sz:] - grad[:sz])
             mats = (diff + mats.reshape(-1)).reshape((-1, 6))
             v = (v.reshape(-1) - Wi @ (grad[sz:] + Vt @ diff)).reshape((-1, 3))
