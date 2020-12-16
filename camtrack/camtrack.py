@@ -4,12 +4,13 @@ __all__ = [
     'track_and_calc_colors'
 ]
 
+import sys
 from typing import List, Optional, Tuple
 
 import cv2
 import numpy as np
 import sortednp as snp
-from scipy.optimize import least_squares
+from scipy.optimize import least_squares, approx_fprime
 
 import frameseq
 from _camtrack import (
@@ -27,6 +28,8 @@ from _camtrack import (
     triangulate_correspondences,
     Correspondences,
     TriangulationParameters,
+    calc_inlier_indices,
+    compute_reprojection_errors
 )
 from _corners import filter_frame_corners
 from corners import CornerStorage
@@ -44,6 +47,8 @@ RETRIANGULATION_INLIERS_ITERATIONS = 25
 CONFIDENCE = 0.99
 THRESHOLD = 1
 HOMOGRAPHY_THRESHOLD = 0.4
+BUNDLE_ADJUSTMENT_ITERATIONS = 5
+EPSILON = 1e-7
 SEED = 42
 
 
@@ -156,6 +161,54 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
     view_mats[frame1] = view_mat1
     view_mats[frame2] = view_mat2
 
+    def retriangulate(to_retr):
+        ok = None
+        print(to_retr.shape)
+        sys.stdout.flush()
+        if len(to_retr.shape) > 2:
+            rows, cols = to_retr.shape[:2]
+            np.random.seed(SEED)
+            for iteration in range(RETRIANGULATION_INLIERS_ITERATIONS):  # search inliers
+                ids1, ids2 = np.argsort(np.random.rand(rows, cols), axis=0)[:2]
+                points1 = np.dstack((np.choose(ids1, to_retr[:, :, 0]),
+                                     np.choose(ids1, to_retr[:, :, 1])))[0]
+                points2 = np.dstack((np.choose(ids2, to_retr[:, :, 0]),
+                                     np.choose(ids2, to_retr[:, :, 1])))[0]
+                _, _, vh = np.linalg.svd(np.stack([  # solve equation system using svd
+                    proj[ids1][:, 2] * points1[:, [0]] - proj[ids1][:, 0],
+                    proj[ids1][:, 2] * points1[:, [1]] - proj[ids1][:, 1],
+                    proj[ids2][:, 2] * points2[:, [0]] - proj[ids2][:, 0],
+                    proj[ids2][:, 2] * points2[:, [1]] - proj[ids2][:, 1]], axis=1))
+                guess = vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]]
+                err = np.array([np.linalg.norm(  # reprojection error
+                    to_retr[i] - project_points(guess, proj[i]), axis=1)
+                    for i in range(rows)])
+                mean = np.mean(err, axis=0)
+                inliers_mask = err < MAX_REPROJECTION_ERROR
+                inliers_cnt = np.count_nonzero(inliers_mask, axis=0)
+                if iteration:
+                    mask = np.logical_and(err_min < mean,
+                                          inliers_max <= inliers_cnt)
+                    err_min = np.where(mask, mean, err_min)
+                    inliers_max = np.where(mask, inliers_cnt, inliers_max)
+                    inliers[:, mask] = inliers_mask[:, mask]
+                else:
+                    err_min = mean
+                    inliers_max = inliers_cnt
+                    inliers = inliers_mask
+            projs = np.repeat(proj[:, np.newaxis], cols, axis=1)
+            projs[~inliers] = np.zeros(proj.shape[1:])
+            ok = np.count_nonzero(inliers,
+                                  axis=0) > MIN_RETRIANGULATION_INLIERS  # retriangulated
+            _, _, vh = np.linalg.svd(np.swapaxes(np.concatenate(np.stack([
+                projs[:, ok][:, :, 2] * to_retr[:, ok][:, :, [0]] - projs[:, ok][:, :, 0],
+                projs[:, ok][:, :, 2] * to_retr[:, ok][:, :, [1]] - projs[:, ok][:, :, 1]],
+                axis=1),
+                axis=0), 0, 1))  # solve equation system
+            point_cloud_builder.add_points(intersection[ok],
+                                           vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]])
+        return ok
+
     changed = True
     while changed:
         changed = False
@@ -240,52 +293,69 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                                                                     np.int64),
                                                                 indices=True)
                                     points.append(corner_storage[retr_frame].points[ids])
-                                points = np.array(points)
-                                if len(points.shape) > 2:
-                                    rows, cols = points.shape[:2]
-                                    np.random.seed(SEED)
-                                    for iteration in range(RETRIANGULATION_INLIERS_ITERATIONS):  # search inliers
-                                        ids1, ids2 = np.argsort(np.random.rand(rows, cols), axis=0)[:2]
-                                        points1 = np.dstack((np.choose(ids1, points[:, :, 0]),
-                                                             np.choose(ids1, points[:, :, 1])))[0]
-                                        points2 = np.dstack((np.choose(ids2, points[:, :, 0]),
-                                                             np.choose(ids2, points[:, :, 1])))[0]
-                                        _, _, vh = np.linalg.svd(np.stack([  # solve equation system using svd
-                                            proj[ids1][:, 2] * points1[:, [0]] - proj[ids1][:, 0],
-                                            proj[ids1][:, 2] * points1[:, [1]] - proj[ids1][:, 1],
-                                            proj[ids2][:, 2] * points2[:, [0]] - proj[ids2][:, 0],
-                                            proj[ids2][:, 2] * points2[:, [1]] - proj[ids2][:, 1]], axis=1))
-                                        guess = vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]]
-                                        err = np.array([np.linalg.norm(  # reprojection error
-                                            points[i] - project_points(guess, proj[i]), axis=1)
-                                            for i in range(rows)])
-                                        mean = np.mean(err, axis=0)
-                                        inliers_mask = err < MAX_REPROJECTION_ERROR
-                                        inliers_cnt = np.count_nonzero(inliers_mask, axis=0)
-                                        if iteration:
-                                            mask = np.logical_and(err_min < mean,
-                                                                  inliers_max <= inliers_cnt)
-                                            err_min = np.where(mask, mean, err_min)
-                                            inliers_max = np.where(mask, inliers_cnt, inliers_max)
-                                            inliers[:, mask] = inliers_mask[:, mask]
-                                        else:
-                                            err_min = mean
-                                            inliers_max = inliers_cnt
-                                            inliers = inliers_mask
-                                    projs = np.repeat(proj[:, np.newaxis], cols, axis=1)
-                                    projs[~inliers] = np.zeros(proj.shape[1:])
-                                    ok = np.count_nonzero(inliers,
-                                                          axis=0) > MIN_RETRIANGULATION_INLIERS  # retriangulated
-                                    _, _, vh = np.linalg.svd(np.swapaxes(np.concatenate(np.stack([
-                                        projs[:, ok][:, :, 2] * points[:, ok][:, :, [0]] - projs[:, ok][:, :, 0],
-                                        projs[:, ok][:, :, 2] * points[:, ok][:, :, [1]] - projs[:, ok][:, :, 1]],
-                                        axis=1),
-                                        axis=0), 0, 1))  # solve equation system
-                                    point_cloud_builder.add_points(intersection[ok],
-                                                                   vh[:, -1, :][:, :3] / vh[:, -1, :][:, [-1]])
-                                    print(f'Frame {frame}... {sum(ok)} points were retriangulated')
+                                retriangulated = retriangulate(np.array(points))
+                                if retriangulated is not None:
+                                    print(f'Frame {frame}... {np.sum(retriangulated)} points were retriangulated')
                             retr_frames.clear()
                         print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
+
+    if seq_size < 100:
+        frames, corners_ids, points_ids = [], [], []
+        for frame in range(seq_size):
+            c_ids, pt_ids = snp.intersect(corner_storage[frame].ids.flatten(),
+                                          point_cloud_builder.ids.flatten(),
+                                          indices=True)[1]
+            inliers = calc_inlier_indices(point_cloud_builder.points[pt_ids],
+                                          corner_storage[frame].points[c_ids],
+                                          intrinsic_mat @ view_mats[frame], 1.0)
+            frames.extend([frame] * len(inliers))
+            corners_ids.extend(c_ids[inliers])
+            points_ids.extend(pt_ids[inliers])
+
+        mats = np.array([np.concatenate([cv2.Rodrigues(view_mat[:, :3])[0].squeeze(),
+                                         view_mat[:, 3]])
+                         for view_mat in view_mats])
+        unique = list(set(points_ids))
+        v = np.array(point_cloud_builder.points[unique])
+        points_ids = [unique.index(point_id) for point_id in points_ids]
+        sz = len(mats.reshape(-1))
+
+        def verr(xk, corner):
+            return compute_reprojection_errors(xk[6:].reshape(1, -1),
+                                               corner.reshape(1, -1),
+                                               intrinsic_mat @ rodrigues_and_translation_to_view_mat3x4(
+                                                   xk[:3].reshape(3, 1),
+                                                   xk[3:6].reshape(3, 1)))[0]
+
+        def err():
+            return np.array([verr(np.concatenate([mats[frame],
+                                               v[id3d]]),
+                               corner_storage[frame].points[id2d])
+                             for frame, id2d, id3d in zip(frames, corners_ids, points_ids)])
+
+        prev_err = err().mean()
+        for idx in range(BUNDLE_ADJUSTMENT_ITERATIONS):
+            A = np.zeros((len(frames), sz + len(v.reshape(-1))))
+            for frame, corners_id, point_id in zip(frames, corners_ids, points_ids):
+                xk = np.concatenate([mats[frame], v[point_id]])
+                derivative = approx_fprime(xk=xk,
+                                           f=lambda xk: verr(xk, corner_storage[frame].points[corners_id]),
+                                           epsilon=np.full_like(xk, EPSILON))
+                A[idx, (sz + point_id * 3): (sz + (point_id + 1) * 3)] = derivative[6:]
+                A[idx, (frame * 6): ((frame + 1) * 6)] = derivative[:6]
+            grad = A.T @ err()
+            d = np.diag(np.diag(A.T @ A)) * 10 + A.T @ A
+            V, Wi = d[:sz, sz:], np.linalg.inv(d[sz:, sz:])
+            Vt = V.T, V_Wi = V @ Wi
+            diff = np.linalg.solve(d[:sz, :sz] - V_Wi @ Vt, V_Wi @ grad[sz:] - grad[:sz])
+            mats = (diff + mats.reshape(-1)).reshape((-1, 6))
+            v = (v.reshape(-1) - Wi @ (grad[sz:] + Vt @ diff)).reshape((-1, 3))
+
+        if np.mean(err()) < prev_err:
+            view_mats = [rodrigues_and_translation_to_view_mat3x4(mat[:3].reshape(3, 1),
+                                                                  mat[3:6].reshape(3, 1)) for mat in mats]
+            point_cloud_builder.update_points(point_cloud_builder.ids[unique], v)
+
     calc_point_cloud_colors(
         point_cloud_builder,
         rgb_sequence,
