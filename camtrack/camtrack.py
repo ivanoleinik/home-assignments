@@ -297,7 +297,7 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                         print(f'Frame {frame}... current point cloud size is {point_cloud_builder.points.size}')
 
     if seq_size < 100:
-        to_retr, frames, corners_ids, points_ids = None, [], [], []
+        frames, corners_ids, points_ids = [], [], []
         for frame in range(seq_size):
             c_ids, pt_ids = snp.intersect(corner_storage[frame].ids.flatten(),
                                           point_cloud_builder.ids.flatten(),
@@ -305,15 +305,10 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
             inliers = calc_inlier_indices(point_cloud_builder.points[pt_ids],
                                           corner_storage[frame].points[c_ids],
                                           intrinsic_mat @ view_mats[frame], 1.0)
-            if to_retr is None:
-                to_retr = corner_storage[frame].points[c_ids]
-            else:
-                to_retr = np.append(to_retr, corner_storage[frame].points[c_ids], axis=0)
             frames.extend([frame] * len(inliers))
             corners_ids.extend(c_ids[inliers])
             points_ids.extend(pt_ids[inliers])
 
-        retriangulate(to_retr)
         mats = np.array([np.concatenate([cv2.Rodrigues(view_mat[:, :3])[0].squeeze(),
                                          view_mat[:, 3]])
                          for view_mat in view_mats])
