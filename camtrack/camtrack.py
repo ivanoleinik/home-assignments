@@ -9,6 +9,7 @@ from typing import List, Optional, Tuple
 import cv2
 import numpy as np
 import sortednp as snp
+from scipy.optimize import least_squares
 
 import frameseq
 from _camtrack import (
@@ -178,15 +179,33 @@ def track_and_calc_colors(camera_parameters: CameraParameters,
                         reprojectionError=MAX_REPROJECTION_ERROR
                     )
                     if retval:
-                        _, rvec, tvec = cv2.solvePnP(objectPoints=point_cloud_builder.points[intersection][inliers],
-                                                     imagePoints=points[inliers],
-                                                     cameraMatrix=intrinsic_mat,
-                                                     distCoeffs=None,
-                                                     flags=cv2.SOLVEPNP_ITERATIVE,
-                                                     useExtrinsicGuess=True,
-                                                     rvec=rvec,
-                                                     tvec=tvec)
-                        view_mats[frame] = rodrigues_and_translation_to_view_mat3x4(rvec, tvec)
+                        # _, rvec, tvec = cv2.solvePnP(objectPoints=point_cloud_builder.points[intersection][inliers],
+                        #                              imagePoints=points[inliers],
+                        #                              cameraMatrix=intrinsic_mat,
+                        #                              distCoeffs=None,
+                        #                              flags=cv2.SOLVEPNP_ITERATIVE,
+                        #                              useExtrinsicGuess=True,
+                        #                              rvec=rvec,
+                        #                              tvec=tvec)
+
+                        # solve PnP iterative using M-estimators
+                        def residuals(vec):
+                            r = vec[:3, np.newaxis]
+                            t = vec[3:]
+                            mat = np.eye(4)[:3]
+                            mat[:3, :3] = cv2.Rodrigues(r)[0]
+                            mat[:3, 3] = t
+                            view_proj = intrinsic_mat @ mat
+                            return (project_points(
+                                point_cloud_builder.points[intersection][inliers.flatten()],
+                                view_proj) - points[inliers.flatten()]).flatten()
+
+                        vec6 = least_squares(fun=residuals,
+                                             x0=np.zeros(6, dtype=np.float64),  # prevent huge max rotation error
+                                             loss='huber',
+                                             method='trf').x
+                        view_mats[frame] = rodrigues_and_translation_to_view_mat3x4(vec6[:3, np.newaxis],
+                                                                                    vec6[3:, np.newaxis])
                         print(f'Frame {frame} is processing, {len(inliers)} inliers were found')
                         changed = True
 
